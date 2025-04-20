@@ -64,15 +64,19 @@ const Home: React.FC = () => {
   return (
     <div className="home-container">
       <div className="page home">
-        <section className="hero-section">
-          <div className="main-text">
-            <h1>
-              Hi, I'm Eve, a product designer at Y Combinator
-              <br />
-              based in beautiful San Francisco, CA.
-            </h1>
-          </div>
-        </section>
+        <div className="hero-outer">
+          <a href="https://www.linkedin.com/in/eve-bouffard/" target="_blank" rel="noopener noreferrer" className="linkedin-button">
+            LinkedIn
+            <span className="material-icons">north_east</span>
+          </a>
+          <section className="hero-section">
+            <div className="main-text">
+              <h1>
+                Hi, I'm Eve, a product designer at Y Combinator based in beautiful San Francisco, CA.
+              </h1>
+            </div>
+          </section>
+        </div>
 
         {/* <section className="ts-slider">
           <div className="ts-track">

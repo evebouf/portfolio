@@ -1,4 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@300;400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/icon?family=Material+Icons');
 
 .home-container {
   padding: 1rem;
@@ -21,6 +22,13 @@
   padding: 0;
 }
 
+.hero-outer {
+  position: relative;
+  width: 100%;
+  background-color: #F9F7EA;
+  border-bottom: 1px solid #333333;
+}
+
 .hero-section {
   display: flex;
   flex-direction: column;
@@ -28,13 +36,18 @@
   justify-content: center;
   min-height: 80vh;
   text-align: center;
-  background-color: #F9F7EA;
-  margin-bottom: 0;
-  border-bottom: 1px solid #333333;
+  max-width: 1400px;
+  margin: 0 auto;
 }
 
 .main-text {
   margin-bottom: 4rem;
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 0 1rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .main-text h1 {
@@ -42,10 +55,11 @@
   font-size: 1.8rem;
   font-weight: 300;
   line-height: 1.6;
-  max-width: 800px;
-  margin: 0 auto;
   color: #333333;
   letter-spacing: -0.02em;
+  max-width: 900px;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .main-text h1 span {
@@ -322,8 +336,38 @@
 .card-content h3 {
   font-family: 'Outfit', sans-serif;
   font-size: 1.25rem;
+  font-weight: 600;
   margin-bottom: 0.5rem;
   color: #1a1a1a;
+}
+
+.linkedin-button {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.75rem 1.5rem;
+  background-color: #F9F7EA;
+  color: #333333;
+  border: 1px solid #333333;
+  border-radius: 9999px;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 1rem;
+  text-decoration: none;
+  transition: all 0.2s ease-in-out;
+  position: absolute;
+  top: 2rem;
+  right: 3rem;
+  z-index: 10;
+}
+
+.linkedin-button:hover {
+  background-color: #333333;
+  color: #F9F7EA;
+  transform: translateY(-2px);
+}
+
+.linkedin-button .material-icons {
+  font-size: 1.25rem;
 }
 
 .card-content p {
