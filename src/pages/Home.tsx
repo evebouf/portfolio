@@ -16,47 +16,47 @@ interface DesignProject {
 const Home: React.FC = () => {
   const designProjects: DesignProject[] = [
     {
-      title: 'Eco-Friendly Packaging',
-      subtitle: 'Sustainable Design System',
-      image: 'https://images.unsplash.com/photo-1562059392-096320bccc7e?auto=format&fit=crop&w=800&q=80',
+      title: 'YC Interview Scheduler',
+      subtitle: 'Interview Scheduling System',
+      image: 'https://images.unsplash.com/photo-1541701494587-cb58502866ab?auto=format&fit=crop&w=800&q=80',
       rating: 5,
       tags: [
-        { label: 'Sustainable' },
-        { label: 'Design System' },
-        { label: 'Packaging' }
+        { label: 'Product Design' },
+        { label: 'System Design' },
+        { label: 'UX Research' }
       ]
     },
     {
-      title: 'Ocean Conservation App',
-      subtitle: 'Mobile UX/UI Design',
-      image: 'https://images.unsplash.com/photo-1562059392-096320bccc7e?auto=format&fit=crop&w=800&q=80',
+      title: 'YC Application Portal',
+      subtitle: 'Application Management Platform',
+      image: 'https://images.unsplash.com/photo-1541701494587-cb58502866ab?auto=format&fit=crop&w=800&q=80',
       rating: 4,
       tags: [
-        { label: 'Web Design' },
+        { label: 'Product Design' },
         { label: 'UX Research' },
-        { label: 'Eco-friendly' }
+        { label: 'Design System' }
       ]
     },
     {
-      title: 'Renewable Energy Brand',
-      subtitle: 'Visual Identity & Guidelines',
-      image: 'https://images.unsplash.com/photo-1508514177221-188b1cf16e9d?auto=format&fit=crop&w=800&q=80',
+      title: 'YC Founder Directory',
+      subtitle: 'Community Platform',
+      image: 'https://images.unsplash.com/photo-1541701494587-cb58502866ab?auto=format&fit=crop&w=800&q=80',
       rating: 5,
       tags: [
-        { label: 'Branding' },
-        { label: 'Identity' },
-        { label: 'Clean Energy' }
+        { label: 'Product Design' },
+        { label: 'Design System' },
+        { label: 'Research' }
       ]
     },
     {
-      title: 'Zero Waste Website',
-      subtitle: 'Web Design & Development',
-      image: 'https://images.unsplash.com/photo-1542601906990-b4d3fb778b09?auto=format&fit=crop&w=800&q=80',
+      title: 'Step Together',
+      subtitle: 'Health & Wellness Platform',
+      image: 'https://images.unsplash.com/photo-1541701494587-cb58502866ab?auto=format&fit=crop&w=800&q=80',
       rating: 4,
       tags: [
-        { label: 'Web' },
-        { label: 'UI Design' },
-        { label: 'Eco' }
+        { label: 'Product Design' },
+        { label: 'UX Research' },
+        { label: 'Design System' }
       ]
     }
   ];
@@ -74,7 +74,7 @@ const Home: React.FC = () => {
           </div>
         </section>
 
-        <section className="ts-slider">
+        {/* <section className="ts-slider">
           <div className="ts-track">
             <span className="ts-title">ts</span>
             <span className="ts-title">ts</span>
@@ -105,7 +105,7 @@ const Home: React.FC = () => {
             <span className="ts-title">ts</span>
             <span className="ts-title">ts</span>
           </div>
-        </section>
+        </section> */}
 
 
 
@@ -142,7 +142,6 @@ const Home: React.FC = () => {
                       </span>
                     ))}
                   </div>
-                  <div className="rating-bar" style={{ width: `${project.rating * 20}%` }} />
                   <h3 className="project-title">{project.title}</h3>
                   <p className="project-subtitle">{project.subtitle}</p>
                 </div>
