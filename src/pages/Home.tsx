@@ -107,14 +107,7 @@ const Home: React.FC = () => {
           </div>
         </section>
 
-        <div className="badges-container">
-          <div className="badges-row">
-            <span className="badge zero-waste">✸ ZERO WASTE PRODUCT</span>
-            <span className="badge low-impact">✧ LOW IMPACT</span>
-            <span className="badge biodegradable">✤ BIODEGRADABLE</span>
-            <span className="badge recycled">♺ RECYCLED PRODUCT</span>
-          </div>
-        </div>
+
 
         <section className="projects-section">
           <div className="section-header">

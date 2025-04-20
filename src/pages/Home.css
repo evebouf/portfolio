@@ -87,26 +87,6 @@
   background-color: #FF6441;
 }
 
-/* Badge colors */
-.badge.zero-waste,
-.badge.low-impact,
-.badge.biodegradable,
-.badge.recycled {
-  background-color: #FF6441;
-}
-
-.women-owned { background-color: #FF6441; }
-.black-owned { background-color: #FFB366; }
-.indigenous { background-color: #98FFB3; }
-.aapi { background-color: #B3E6FF; }
-.latinx { background-color: #99CCFF; }
-
-.lgbtqia { background-color: #E6B3FF; }
-.give-back { background-color: #FFB3B3; }
-.ethical { background-color: #FFE6B3; }
-.vegan { background-color: #B3FFB3; }
-.cruelty-free { background-color: #FFD699; }
-
 @media (max-width: 768px) {
   .main-text h1 {
     font-size: 2.5rem;
@@ -133,9 +113,8 @@
   display: flex;
   gap: 2rem;
   white-space: nowrap;
-  animation: slide-ts 30s linear infinite;
+  animation: slide-ts 40s linear infinite;
   will-change: transform;
-  padding-left: 100vw;
 }
 
 .ts-title {
@@ -152,7 +131,7 @@
     transform: translateX(0);
   }
   100% {
-    transform: translateX(-200%);
+    transform: translateX(-50%);
   }
 }
 
