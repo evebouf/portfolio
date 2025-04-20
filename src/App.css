@@ -13,33 +13,8 @@ html, body {
   min-height: 100vh;
 }
 
-.nav-links {
-  padding: 1rem 2rem;
-  background-color: white;
-  box-shadow: 0 2px 4px rgba(0,0,0,0.05);
-  position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
-  z-index: 1000;
-  display: flex;
-  gap: 2rem;
-}
-
-.nav-links a {
-  color: #111;
-  text-decoration: none;
-  font-weight: 500;
-  font-size: 1rem;
-  transition: color 0.2s;
-}
-
-.nav-links a:hover {
-  color: #2ea44f;
-}
-
 main {
-  padding-top: 4rem;
+  min-height: 100vh;
 }
 
 .centered-container {
