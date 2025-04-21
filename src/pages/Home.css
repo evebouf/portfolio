@@ -58,6 +58,7 @@
   max-width: 900px;
   margin-left: auto;
   margin-right: auto;
+  padding: 0 1rem;
 }
 
 .yc-link {
@@ -124,6 +125,39 @@
   .badge {
     font-size: 0.75rem;
     padding: 0.4rem 0.8rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .main-text h1 {
+    font-size: 1.25rem;
+    line-height: 1.5;
+    padding: 0 1.5rem;
+  }
+
+  .linkedin-button {
+    padding: 0.5rem 1rem;
+    font-size: 0.875rem;
+    top: 1.5rem;
+    right: 1.5rem;
+  }
+
+  .project-title {
+    font-size: 1rem;
+  }
+
+  .project-subtitle {
+    font-size: 0.875rem;
+  }
+
+  .tag {
+    font-size: 0.75rem;
+    padding: 0.25rem 0.5rem;
+  }
+
+  .projects-grid {
+    gap: 1.5rem;
+    padding: 1.5rem;
   }
 }
 
