@@ -1,4 +1,4 @@
-import * as React from 'react';
+import React, { useState, useEffect } from 'react';
 import './Home.css';
 
 interface Tag {
@@ -14,6 +14,12 @@ interface DesignProject {
 }
 
 const Home: React.FC = () => {
+  const [isDarkMode, setIsDarkMode] = useState(false);
+
+  useEffect(() => {
+    document.documentElement.setAttribute('data-theme', isDarkMode ? 'dark' : 'light');
+  }, [isDarkMode]);
+
   const designProjects: DesignProject[] = [
     {
       title: 'YC Interview Scheduler',
@@ -63,6 +69,15 @@ const Home: React.FC = () => {
 
   return (
     <div className="home-container">
+      <button
+        className="theme-toggle"
+        onClick={() => setIsDarkMode(!isDarkMode)}
+        aria-label="Toggle dark mode"
+      >
+        <span className="material-icons">
+          {isDarkMode ? 'light_mode' : 'dark_mode'}
+        </span>
+      </button>
       <div className="page home">
         <div className="hero-outer">
           <a href="https://www.linkedin.com/in/eve-bouffard/" target="_blank" rel="noopener noreferrer" className="linkedin-button">
