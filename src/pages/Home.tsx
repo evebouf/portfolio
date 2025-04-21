@@ -72,7 +72,7 @@ const Home: React.FC = () => {
           <section className="hero-section">
             <div className="main-text">
               <h1>
-                Hi, I'm Eve, a product designer at <a href="https://www.ycombinator.com" target="_blank" rel="noopener noreferrer" className="yc-link">Y&nbsp;Combinator</a> based in beautiful San&nbsp;Francisco, CA.
+                Hi, I'm Eve, a product designer at <a href="https://www.ycombinator.com" target="_blank" rel="noopener noreferrer" className="yc-link">Y&nbsp;Combinator</a> based in beautiful San&nbsp;Francisco, CA <img src="/src/assets/ChatGPT Image Apr 20, 2025, 06_00_17 PM.png" alt="Location icon" className="location-icon" />
               </h1>
             </div>
           </section>
