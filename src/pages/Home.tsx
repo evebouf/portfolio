@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import './Home.css';
+import TypeWriter from '../components/TypeWriter';
 
 interface Tag {
   label: string;
@@ -15,6 +16,7 @@ interface DesignProject {
 
 const Home: React.FC = () => {
   const [isDarkMode, setIsDarkMode] = useState(false);
+  const [typingStage, setTypingStage] = useState(0);
 
   useEffect(() => {
     document.documentElement.setAttribute('data-theme', isDarkMode ? 'dark' : 'light');
@@ -87,7 +89,45 @@ const Home: React.FC = () => {
           <section className="hero-section">
             <div className="main-text">
               <h1>
-                Hi, I'm Eve, a product designer at <a href="https://www.ycombinator.com" target="_blank" rel="noopener noreferrer" className="yc-link">Y&nbsp;Combinator</a> based in beautiful San&nbsp;Francisco, CA <img src="/src/assets/ChatGPT Image Apr 20, 2025, 06_00_17 PM.png" alt="Location icon" className="location-icon" />
+                <div className="type-line">
+                  <TypeWriter
+                    text="Hi, I'm Eve, a product designer at"
+                    delay={40}
+                    onComplete={() => setTypingStage(1)}
+                    isLast={false}
+                  />
+                </div>
+                {typingStage >= 1 && (
+                  <div className="type-line">
+                    <a href="https://www.ycombinator.com" target="_blank" rel="noopener noreferrer" className="yc-link">
+                      <TypeWriter
+                        text="Y Combinator"
+                        delay={40}
+                        onComplete={() => setTypingStage(2)}
+                        isLast={false}
+                      />
+                    </a>
+                    <TypeWriter
+                      text=" based in beautiful"
+                      delay={40}
+                      onComplete={() => setTypingStage(3)}
+                      isLast={false}
+                    />
+                  </div>
+                )}
+                {typingStage >= 3 && (
+                  <div className="type-line">
+                    <TypeWriter
+                      text="San Francisco, CA"
+                      delay={40}
+                      onComplete={() => setTypingStage(4)}
+                      isLast={true}
+                    />
+                    {typingStage === 4 && (
+                      <img src="/src/assets/ChatGPT Image Apr 20, 2025, 06_00_17 PM.png" alt="Location icon" className="location-icon" />
+                    )}
+                  </div>
+                )}
               </h1>
             </div>
           </section>
