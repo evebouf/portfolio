@@ -161,6 +161,34 @@ const Home: React.FC = () => {
             ))}
           </div>
         </section>
+
+        <section className="contact-section">
+          <div className="section-header">
+            <div className="sliding-title">
+              <div className="sliding-track">
+                <span className="title">Contact</span>
+                <span className="title">Contact</span>
+                <span className="title">Contact</span>
+                <span className="title">Contact</span>
+                <span className="title">Contact</span>
+                <span className="title">Contact</span>
+                <span className="title">Contact</span>
+                <span className="title">Contact</span>
+                <span className="title">Contact</span>
+                <span className="title">Contact</span>
+                <span className="title">Contact</span>
+                <span className="title">Contact</span>
+                <span className="title">Contact</span>
+                <span className="title">Contact</span>
+                <span className="title">Contact</span>
+                <span className="title">Contact</span>
+                <span className="title">Contact</span>
+                <span className="title">Contact</span>
+                <span className="title">Contact</span>
+              </div>
+            </div>
+          </div>
+        </section>
       </div>
     </div>
   );

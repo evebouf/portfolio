@@ -155,9 +155,68 @@
     padding: 0.25rem 0.5rem;
   }
 
+  .projects-section {
+    width: 100vw;
+    margin-left: calc(-50vw + 50%);
+    margin-right: calc(-50vw + 50%);
+  }
+
   .projects-grid {
-    gap: 1.5rem;
-    padding: 1.5rem;
+    gap: 1rem;
+    padding: 1rem;
+    grid-template-columns: 1fr;
+    max-width: none;
+  }
+
+  .project-card {
+    max-width: none;
+    width: 100%;
+  }
+
+  .project-image img {
+    width: 100%;
+    height: auto;
+    aspect-ratio: 1/1.5;
+    object-fit: cover;
+  }
+}
+
+/* Section Headers */
+.section-header {
+  width: 100%;
+  overflow: hidden;
+  margin: 2rem 0;
+}
+
+.sliding-title {
+  width: 100%;
+  overflow: hidden;
+}
+
+.sliding-track {
+  display: flex;
+  animation: slide 20s linear infinite;
+}
+
+.sliding-track .title {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 4rem;
+  white-space: nowrap;
+  margin-right: 2rem;
+  color: #333333;
+}
+
+/* Projects Section Styles */
+
+/* Contact Section Styles */
+.contact-section {
+  padding: 4rem 0;
+}
+
+@media (max-width: 768px) {
+  .sliding-track .title {
+    font-size: 2.5rem;
+    margin-right: 1.5rem;
   }
 }
 
