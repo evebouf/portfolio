@@ -128,6 +128,14 @@ const Home: React.FC = () => {
                 <span className="title">Projects</span>
                 <span className="title">Projects</span>
                 <span className="title">Projects</span>
+                <span className="title">Projects</span>
+                <span className="title">Projects</span>
+                <span className="title">Projects</span>
+                <span className="title">Projects</span>
+                <span className="title">Projects</span>
+                <span className="title">Projects</span>
+                <span className="title">Projects</span>
+                <span className="title">Projects</span>
               </div>
             </div>
           </div>

@@ -25,8 +25,6 @@
 .hero-outer {
   position: relative;
   width: 100%;
-  background-color: #F9F7EA;
-  border-bottom: 1px solid #333333;
 }
 
 .hero-section {
@@ -325,13 +323,6 @@
   letter-spacing: 0;
   border: 1px solid #333333;
   background: transparent;
-}
-
-.rating-bar {
-  height: 4px;
-  background-color: #f0f0f0;
-  border-radius: 2px;
-  margin-bottom: 1rem;
 }
 
 .project-title {
