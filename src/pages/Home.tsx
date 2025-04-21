@@ -117,25 +117,25 @@ const Home: React.FC = () => {
           <div className="section-header">
             <div className="sliding-title">
               <div className="sliding-track">
-                <span className="title">Projects</span>
-                <span className="title">Projects</span>
-                <span className="title">Projects</span>
-                <span className="title">Projects</span>
-                <span className="title">Projects</span>
-                <span className="title">Projects</span>
-                <span className="title">Projects</span>
-                <span className="title">Projects</span>
-                <span className="title">Projects</span>
-                <span className="title">Projects</span>
-                <span className="title">Projects</span>
-                <span className="title">Projects</span>
-                <span className="title">Projects</span>
-                <span className="title">Projects</span>
-                <span className="title">Projects</span>
-                <span className="title">Projects</span>
-                <span className="title">Projects</span>
-                <span className="title">Projects</span>
-                <span className="title">Projects</span>
+                <span className="title">UX Research</span>
+                <span className="title">Product Design</span>
+                <span className="title">System Design</span>
+                <span className="title">Front-End Dev</span>
+                <span className="title">Design Systems</span>
+                <span className="title">User Testing</span>
+                <span className="title">UX Research</span>
+                <span className="title">Product Design</span>
+                <span className="title">System Design</span>
+                <span className="title">Front-End Dev</span>
+                <span className="title">Design Systems</span>
+                <span className="title">User Testing</span>
+                <span className="title">UX Research</span>
+                <span className="title">Product Design</span>
+                <span className="title">System Design</span>
+                <span className="title">Front-End Dev</span>
+                <span className="title">Design Systems</span>
+                <span className="title">User Testing</span>
+                <span className="title">UX Research</span>
               </div>
             </div>
           </div>
