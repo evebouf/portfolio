@@ -17,7 +17,7 @@ const Home: React.FC = () => {
   const designProjects: DesignProject[] = [
     {
       title: 'YC Interview Scheduler',
-      subtitle: 'Interview Scheduling System',
+      subtitle: 'A scheduling system that helps YC partners efficiently manage their time with startup founders during interview season.',
       image: 'https://images.unsplash.com/photo-1541701494587-cb58502866ab?auto=format&fit=crop&w=800&q=80',
       rating: 5,
       tags: [
@@ -28,7 +28,7 @@ const Home: React.FC = () => {
     },
     {
       title: 'YC Application Portal',
-      subtitle: 'Application Management Platform',
+      subtitle: 'A streamlined platform designed to help founders submit and track their YC applications, with real-time status updates and integrated feedback systems.',
       image: 'https://images.unsplash.com/photo-1541701494587-cb58502866ab?auto=format&fit=crop&w=800&q=80',
       rating: 4,
       tags: [
@@ -39,7 +39,7 @@ const Home: React.FC = () => {
     },
     {
       title: 'YC Founder Directory',
-      subtitle: 'Community Platform',
+      subtitle: 'An internal tool that connects YC founders across batches, enabling knowledge sharing and collaboration while maintaining privacy and security.',
       image: 'https://images.unsplash.com/photo-1541701494587-cb58502866ab?auto=format&fit=crop&w=800&q=80',
       rating: 5,
       tags: [
@@ -50,7 +50,7 @@ const Home: React.FC = () => {
     },
     {
       title: 'Step Together',
-      subtitle: 'Health & Wellness Platform',
+      subtitle: 'A wellness app that encourages daily movement through gamified challenges and social connections, helping remote teams stay active and engaged.',
       image: 'https://images.unsplash.com/photo-1541701494587-cb58502866ab?auto=format&fit=crop&w=800&q=80',
       rating: 4,
       tags: [
@@ -147,15 +147,21 @@ const Home: React.FC = () => {
                   <img src={project.image} alt={project.title} />
                 </div>
                 <div className="project-details">
-                  <div className="tags-row">
-                    {project.tags.map(tag => (
-                      <span key={tag.label} className="tag">
-                        {tag.label}
-                      </span>
-                    ))}
+                  <div>
+                    <div className="tags-row">
+                      {project.tags.map(tag => (
+                        <span key={tag.label} className="tag">
+                          {tag.label}
+                        </span>
+                      ))}
+                    </div>
+                    <h3 className="project-title">{project.title}</h3>
+                    <p className="project-subtitle">{project.subtitle}</p>
                   </div>
-                  <h3 className="project-title">{project.title}</h3>
-                  <p className="project-subtitle">{project.subtitle}</p>
+                  <a href="#" className="project-button">
+                    Open project
+                    <span className="material-icons">north_east</span>
+                  </a>
                 </div>
               </div>
             ))}
