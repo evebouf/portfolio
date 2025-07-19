@@ -88,6 +88,17 @@
   text-align: center;
   max-width: 1400px;
   margin: 0 auto;
+  position: relative;
+}
+
+.hero-name {
+  position: absolute;
+  top: 2rem;
+  left: 2rem;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 1rem;
+  color: var(--text-color);
+  opacity: 0.8;
 }
 
 .main-text {
@@ -553,8 +564,8 @@
   position: absolute;
   bottom: 2rem;
   left: 2rem;
-  max-width: 400px;
-  font-family: 'Satoshi', 'JetBrains Mono', sans-serif;
+  max-width: 600px;
+  font-family: 'JetBrains Mono', monospace;
   color: var(--title-color);
   opacity: 0.9;
   text-align: left;
@@ -564,10 +575,11 @@
 .intro-text .type-line {
   font-size: 1.2rem;
   line-height: 1.2;
-  display: inline-flex;
+  display: block;
   align-items: center;
-  font-family: 'Satoshi', 'JetBrains Mono', sans-serif !important;
+  font-family: 'JetBrains Mono', monospace !important;
   letter-spacing: 0.05em;
+  white-space: nowrap;
 }
 
 .location-icon {

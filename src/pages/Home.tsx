@@ -18,6 +18,14 @@ const Home: React.FC = () => {
               LinkedIn
               <span className="material-icons">north_east</span>
             </a>
+            <a href="https://github.com/evebouf" target="_blank" rel="noopener noreferrer" className="linkedin-button">
+              GitHub
+              <span className="material-icons">north_east</span>
+            </a>
+            <a href="https://x.com/eve_bouff" target="_blank" rel="noopener noreferrer" className="linkedin-button">
+              Twitter
+              <span className="material-icons">north_east</span>
+            </a>
             <button
               className="theme-toggle"
               onClick={() => setIsDarkMode(!isDarkMode)}
@@ -30,21 +38,19 @@ const Home: React.FC = () => {
           </div>
 
           <section className="hero-section">
+            <div className="hero-name">Eve Bouffard</div>
             <div className="hero-content">
               <h1 className="hero-title">Designing in ©ode </h1>
               <div className="intro-text">
                 <div className="type-line">
-                  I'm Eve, a product designer at
-                </div>
-                <div className="type-line">
+                  I design and build internal tools at{" "}
                   <a href="https://www.ycombinator.com" target="_blank" rel="noopener noreferrer" className="yc-link">
                     <img src="/yc.png" alt="Y Combinator" className="yc-logo" />
                     Y Combinator
                   </a>
-                  {" based in beautiful"}
                 </div>
                 <div className="type-line">
-                  San Francisco, CA
+                  in beautiful San Francisco, CA
                   <img src="/sf-icon.png" alt="Location icon" className="location-icon" />
                 </div>
               </div>
