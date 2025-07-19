@@ -3,10 +3,21 @@ import './Home.css';
 
 const Home: React.FC = () => {
   const [isDarkMode, setIsDarkMode] = useState(false);
+  const [emailCopied, setEmailCopied] = useState(false);
 
   useEffect(() => {
     document.documentElement.setAttribute('data-theme', isDarkMode ? 'dark' : 'light');
   }, [isDarkMode]);
+
+  const copyEmailToClipboard = async () => {
+    try {
+      await navigator.clipboard.writeText('e.bouffard252@gmail.com');
+      setEmailCopied(true);
+      setTimeout(() => setEmailCopied(false), 2000); // Hide message after 2 seconds
+    } catch (err) {
+      console.error('Failed to copy email: ', err);
+    }
+  };
 
   return (
     <div className="home-container">
@@ -26,10 +37,10 @@ const Home: React.FC = () => {
               Twitter
               <span className="material-icons">north_east</span>
             </a>
-            <a href="mailto:e.bouffard252@gmail.com" className="linkedin-button">
-              Email me
-              <span className="material-icons">mail</span>
-            </a>
+            <button onClick={copyEmailToClipboard} className="linkedin-button">
+              {emailCopied ? '✨ Copied!' : 'Email me'}
+              <span className="material-icons">{emailCopied ? 'check' : 'mail'}</span>
+            </button>
             <button
               className="theme-toggle"
               onClick={() => setIsDarkMode(!isDarkMode)}
