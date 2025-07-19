@@ -38,14 +38,14 @@ const Home: React.FC = () => {
                 </div>
                 <div className="type-line">
                   <a href="https://www.ycombinator.com" target="_blank" rel="noopener noreferrer" className="yc-link">
-                    <img src="/src/assets/images/yc.png" alt="Y Combinator" className="yc-logo" />
+                    <img src="/yc.png" alt="Y Combinator" className="yc-logo" />
                     Y Combinator
                   </a>
                   {" based in beautiful"}
                 </div>
                 <div className="type-line">
                   San Francisco, CA
-                  <img src="/src/assets/ChatGPT Image Apr 20, 2025, 06_00_17 PM.png" alt="Location icon" className="location-icon" />
+                  <img src="/sf-icon.png" alt="Location icon" className="location-icon" />
                 </div>
               </div>
             </div>
