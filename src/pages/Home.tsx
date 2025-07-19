@@ -24,7 +24,7 @@ const Home: React.FC = () => {
 
       <div className="page home">
         <div className="hero-outer">
-          <div className="top-buttons">
+          <div className="desktop-buttons">
             <a href="https://www.linkedin.com/in/eve-bouffard/" target="_blank" rel="noopener noreferrer" className="linkedin-button">
               LinkedIn
               <span className="material-icons">north_east</span>
@@ -70,6 +70,34 @@ const Home: React.FC = () => {
               </div>
             </div>
           </section>
+          
+          <div className="mobile-buttons">
+            <a href="https://www.linkedin.com/in/eve-bouffard/" target="_blank" rel="noopener noreferrer" className="linkedin-button">
+              LinkedIn
+              <span className="material-icons">north_east</span>
+            </a>
+            <a href="https://github.com/evebouf" target="_blank" rel="noopener noreferrer" className="linkedin-button">
+              GitHub
+              <span className="material-icons">north_east</span>
+            </a>
+            <a href="https://x.com/eve_bouff" target="_blank" rel="noopener noreferrer" className="linkedin-button">
+              Twitter
+              <span className="material-icons">north_east</span>
+            </a>
+            <button onClick={copyEmailToClipboard} className="linkedin-button">
+              {emailCopied ? '✨ Copied!' : 'Email me'}
+              <span className="material-icons">{emailCopied ? 'check' : 'mail'}</span>
+            </button>
+            <button
+              className="theme-toggle"
+              onClick={() => setIsDarkMode(!isDarkMode)}
+              aria-label="Toggle dark mode"
+            >
+              <span className="material-icons">
+                {isDarkMode ? 'light_mode' : 'dark_mode'}
+              </span>
+            </button>
+          </div>
         </div>
 
         {/* <section className="ts-slider">

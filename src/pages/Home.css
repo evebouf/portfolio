@@ -23,6 +23,20 @@
   --title-color: #F9F7EA;
 }
 
+.desktop-buttons {
+  position: absolute;
+  top: 2rem;
+  right: 2rem;
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+  z-index: 10;
+}
+
+.mobile-buttons {
+  display: none;
+}
+
 .top-buttons {
   position: absolute;
   top: 1rem;
@@ -696,12 +710,33 @@
     line-height: 1.4;
   }
 
-  .top-buttons {
-    flex-direction: column;
+  .intro-text .linkedin-button {
+    font-size: 0.9rem !important;
+    padding: 0.25rem 0.5rem !important;
+    margin: 0 0.1rem;
+    display: inline-flex;
+    vertical-align: baseline;
+  }
+
+  .intro-text .yc-logo {
+    width: 0.9rem !important;
+    height: 0.9rem !important;
+    margin-right: 0.3rem !important;
+  }
+
+  .desktop-buttons {
+    display: none;
+  }
+
+  .mobile-buttons {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
     gap: 0.5rem;
-    top: 1rem;
-    right: 1rem;
-    align-items: flex-end;
+    justify-content: center;
+    margin-top: 2rem;
+    align-items: center;
+    padding: 0 1rem;
   }
 
   .linkedin-button {
@@ -734,6 +769,14 @@
   font-size: 1rem;
   text-decoration: none;
   transition: all 0.2s ease-in-out;
+}
+
+.linkedin-button .material-icons {
+  transition: transform 0.2s ease-in-out;
+}
+
+.linkedin-button:hover .material-icons {
+  transform: translate(2px, -2px);
 }
 
 .linkedin-button:hover {
