@@ -71,6 +71,18 @@ const Home: React.FC = () => {
             </div>
           </section>
           
+          <div className="mobile-theme-toggle">
+            <button
+              className="theme-toggle"
+              onClick={() => setIsDarkMode(!isDarkMode)}
+              aria-label="Toggle dark mode"
+            >
+              <span className="material-icons">
+                {isDarkMode ? 'light_mode' : 'dark_mode'}
+              </span>
+            </button>
+          </div>
+          
           <div className="mobile-buttons">
             <a href="https://www.linkedin.com/in/eve-bouffard/" target="_blank" rel="noopener noreferrer" className="linkedin-button">
               LinkedIn
@@ -87,15 +99,6 @@ const Home: React.FC = () => {
             <button onClick={copyEmailToClipboard} className="linkedin-button">
               {emailCopied ? '✨ Copied!' : 'Email me'}
               <span className="material-icons">{emailCopied ? 'check' : 'mail'}</span>
-            </button>
-            <button
-              className="theme-toggle"
-              onClick={() => setIsDarkMode(!isDarkMode)}
-              aria-label="Toggle dark mode"
-            >
-              <span className="material-icons">
-                {isDarkMode ? 'light_mode' : 'dark_mode'}
-              </span>
             </button>
           </div>
         </div>
