@@ -15,11 +15,17 @@
   --title-color: #F9F7EA;
 }
 
-.theme-toggle {
-  position: fixed;
+.top-buttons {
+  position: absolute;
   top: 1rem;
   right: 1rem;
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
   z-index: 1000;
+}
+
+.theme-toggle {
   background: transparent;
   border: 1px solid var(--border-color);
   color: var(--text-color);
@@ -610,9 +616,6 @@
 }
 
 .linkedin-button {
-  position: absolute;
-  top: 1rem;
-  right: 1rem;
   display: inline-flex;
   align-items: center;
   gap: 0.5rem;
@@ -625,7 +628,6 @@
   font-size: 1rem;
   text-decoration: none;
   transition: all 0.2s ease-in-out;
-  z-index: 10;
 }
 
 .linkedin-button:hover {
