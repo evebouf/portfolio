@@ -308,7 +308,12 @@
   letter-spacing: -0.03em;
   white-space: nowrap;
   margin-right: 2rem;
-  transition: color 0.2s ease-in-out;
+  opacity: 0.3;
+  transition: opacity 0.3s ease-in-out, color 0.2s ease-in-out;
+}
+
+.sliding-track .title:hover {
+  opacity: 1;
 }
 
 :root[data-theme='light'] .sliding-track .title {
@@ -418,6 +423,8 @@
   margin: 0;
   padding: 0;
   letter-spacing: -0.03em;
+  opacity: 0.3;
+  transition: opacity 0.3s ease-in-out;
 }
 
 @keyframes slide {

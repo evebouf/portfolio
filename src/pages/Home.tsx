@@ -26,6 +26,10 @@ const Home: React.FC = () => {
               Twitter
               <span className="material-icons">north_east</span>
             </a>
+            <a href="mailto:e.bouffard252@gmail.com" className="linkedin-button">
+              Email me
+              <span className="material-icons">mail</span>
+            </a>
             <button
               className="theme-toggle"
               onClick={() => setIsDarkMode(!isDarkMode)}
@@ -95,29 +99,29 @@ const Home: React.FC = () => {
 
 
 
-        <section className="contact-section">
+        <section className="services-section">
           <div className="section-header">
             <div className="sliding-title">
               <div className="sliding-track">
-                <span className="title">Contact</span>
-                <span className="title">Contact</span>
-                <span className="title">Contact</span>
-                <span className="title">Contact</span>
-                <span className="title">Contact</span>
-                <span className="title">Contact</span>
-                <span className="title">Contact</span>
-                <span className="title">Contact</span>
-                <span className="title">Contact</span>
-                <span className="title">Contact</span>
-                <span className="title">Contact</span>
-                <span className="title">Contact</span>
-                <span className="title">Contact</span>
-                <span className="title">Contact</span>
-                <span className="title">Contact</span>
-                <span className="title">Contact</span>
-                <span className="title">Contact</span>
-                <span className="title">Contact</span>
-                <span className="title">Contact</span>
+                <span className="title">UX/UI Design</span>
+                <span className="title">Brand Design</span>
+                <span className="title">Graphic Design</span>
+                <span className="title">Swag Design</span>
+                <span className="title">Web Design</span>
+                <span className="title">Logo Design</span>
+                <span className="title">Print Design</span>
+                <span className="title">Visual Identity</span>
+                <span className="title">Design Systems</span>
+                <span className="title">Prototyping</span>
+                <span className="title">User Research</span>
+                <span className="title">Interface Design</span>
+                <span className="title">Creative Direction</span>
+                <span className="title">UX/UI Design</span>
+                <span className="title">Brand Design</span>
+                <span className="title">Graphic Design</span>
+                <span className="title">Swag Design</span>
+                <span className="title">Web Design</span>
+                <span className="title">Logo Design</span>
               </div>
             </div>
           </div>
