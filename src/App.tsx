@@ -1,8 +1,8 @@
 import * as React from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import './App.css';
+import './styles/fonts.css';
 import Home from './pages/Home';
-import Home2 from './pages/Home2';
 
 const App: React.FC = () => {
   return (
@@ -11,7 +11,6 @@ const App: React.FC = () => {
         <main>
           <Routes>
             <Route path="/" element={<Home />} />
-            <Route path="/home2" element={<Home2 />} />
           </Routes>
         </main>
       </div>

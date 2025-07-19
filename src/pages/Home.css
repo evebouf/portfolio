@@ -298,6 +298,7 @@
 /* Contact Section Styles */
 .contact-section {
   padding: 4rem 0;
+  font-family: 'Quilon', 'JetBrains Mono', monospace;
 }
 
 @media (max-width: 768px) {
@@ -512,6 +513,59 @@
   margin: 1rem 0 0.5rem 0;
   color: #333333;
   letter-spacing: -0.01em;
+}
+
+.type-line {
+  margin: 0;
+  padding: 0;
+  font-family: 'Quilon', 'JetBrains Mono', monospace;
+  font-size: 1.2rem;
+  line-height: 1.5;
+  color: var(--title-color);
+}
+
+.hero-title {
+  font-family: 'Quilon', 'JetBrains Mono', monospace;
+  font-size: 200px;
+  font-weight: bold;
+  margin: 0;
+  padding: 0;
+  color: var(--title-color);
+  line-height: 1;
+}
+
+.intro-text {
+  position: absolute;
+  bottom: 2rem;
+  left: 2rem;
+  max-width: 400px;
+  font-family: 'Satoshi', 'JetBrains Mono', sans-serif;
+  color: var(--title-color);
+  opacity: 0.9;
+  text-align: left;
+}
+
+.intro-text .type-line {
+  font-size: 1.2rem;
+  line-height: 1.2;
+  display: inline-flex;
+  align-items: center;
+  font-family: 'Satoshi', 'JetBrains Mono', sans-serif !important;
+}
+
+.location-icon {
+  width: 1.2rem;
+  height: 1.2rem;
+  margin-left: 0.25rem;
+  vertical-align: middle;
+}
+
+.yc-logo {
+  width: 1.2rem;
+  height: 1.2rem;
+  margin-right: 0.5rem;
+  vertical-align: middle;
+  display: inline-block;
 }
 
 .project-subtitle {

@@ -1,0 +1,16 @@
+/* Add this code after you've set up your Adobe Fonts project */
+@import url("https://use.typekit.net/[your-kit-code].css");
+
+/* Fallback font stack if Roca Two Compressed is not available */
+@font-face {
+  font-family: 'roc-grotesk-compressed';
+  src: local('Roc Grotesk Compressed');
+  font-weight: 400;
+}
+
+@font-face {
+  font-family: 'Satoshi';
+  src: url('../fonts/Satoshi-Regular.otf') format('opentype');
+  font-weight: normal;
+  font-style: normal;
+}
