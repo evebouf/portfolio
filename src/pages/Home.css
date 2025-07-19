@@ -642,14 +642,24 @@
 /* Mobile Responsive Styles */
 @media (max-width: 768px) {
   .hero-section {
-    min-height: 100vh;
+    min-height: 80vh;
     padding: 1rem;
+    justify-content: center;
+  }
+
+  .hero-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 1rem 0;
   }
 
   .hero-title {
-    font-size: 80px;
-    line-height: 0.8;
-    margin-bottom: 2rem;
+    font-size: 60px;
+    line-height: 0.9;
+    margin: 0;
+    text-align: center;
   }
 
   .hero-name {
@@ -659,10 +669,10 @@
   }
 
   .intro-text {
-    bottom: 2rem;
-    left: 1rem;
-    right: 1rem;
+    position: static;
+    margin-top: 2rem;
     max-width: none;
+    text-align: center;
   }
 
   .intro-text .type-line {
@@ -676,6 +686,7 @@
     gap: 0.5rem;
     top: 1rem;
     right: 1rem;
+    align-items: flex-end;
   }
 
   .linkedin-button {

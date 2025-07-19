@@ -50,7 +50,7 @@ const Home: React.FC = () => {
                   </a>
                 </div>
                 <div className="type-line">
-                  in beautiful San Francisco, CA
+                   in beautiful San Francisco, CA
                   <img src="/sf-icon.png" alt="Location icon" className="location-icon" />
                 </div>
               </div>
