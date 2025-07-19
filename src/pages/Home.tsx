@@ -48,13 +48,12 @@ const Home: React.FC = () => {
               <div className="intro-text">
                 <div className="type-line">
                   I design and build internal tools at{" "}
-                  <a href="https://www.ycombinator.com" target="_blank" rel="noopener noreferrer" className="yc-link">
+                  <a href="https://www.ycombinator.com" target="_blank" rel="noopener noreferrer" className="linkedin-button">
                     <img src="/yc.png" alt="Y Combinator" className="yc-logo" />
                     Y Combinator
+                    <span className="material-icons">north_east</span>
                   </a>
-                </div>
-                <div className="type-line">
-                   in beautiful San Francisco, CA
+                  {" in beautiful San Francisco, CA"}
                   <img src="/sf-icon.png" alt="Location icon" className="location-icon" />
                 </div>
               </div>
