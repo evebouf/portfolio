@@ -1,8 +1,16 @@
 @import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@300;400;500;600;700&display=swap');
 @import url('https://fonts.googleapis.com/icon?family=Material+Icons');
 
+@font-face {
+  font-family: 'VT323';
+  src: url('../assets/fonts/VT323-Regular.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
 :root[data-theme='light'] {
-  --bg-color: #F9F7EA;
+  --bg-color: #FAF8F0;
   --text-color: #333333;
   --border-color: #333333;
   --title-color: #333333;
@@ -549,6 +557,7 @@
   color: var(--title-color);
   opacity: 0.9;
   text-align: left;
+  letter-spacing: 0.05em;
 }
 
 .intro-text .type-line {
@@ -557,6 +566,7 @@
   display: inline-flex;
   align-items: center;
   font-family: 'Satoshi', 'JetBrains Mono', sans-serif !important;
+  letter-spacing: 0.05em;
 }
 
 .location-icon {

@@ -34,7 +34,7 @@ const Home: React.FC = () => {
               <h1 className="hero-title">Designing in ©ode </h1>
               <div className="intro-text">
                 <div className="type-line">
-                  Hi, I'm Eve, a product designer at
+                  I'm Eve, a product designer at
                 </div>
                 <div className="type-line">
                   <a href="https://www.ycombinator.com" target="_blank" rel="noopener noreferrer" className="yc-link">
