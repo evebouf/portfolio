@@ -5,13 +5,24 @@ const Terminal: React.FC = () => {
   const [phase, setPhase] = useState(0);
   const [displayText, setDisplayText] = useState('');
   const [showCursor, setShowCursor] = useState(true);
+  const [emailCopied, setEmailCopied] = useState(false);
 
   const sequences = [
     { text: 'SYSTEM BOOT...', delay: 800 },
     { text: 'LOADING USER...', delay: 600 },
     { text: 'AUTHENTICATED', delay: 400 },
-    { text: '> EVE', delay: 0 }
+    { text: 'READY', delay: 1000 }
   ];
+
+  const copyEmailToClipboard = async () => {
+    try {
+      await navigator.clipboard.writeText('eve.bouffard@gmail.com');
+      setEmailCopied(true);
+      setTimeout(() => setEmailCopied(false), 2000);
+    } catch (err) {
+      console.error('Failed to copy email: ', err);
+    }
+  };
 
   useEffect(() => {
     const timer = setTimeout(() => {
@@ -63,7 +74,7 @@ const Terminal: React.FC = () => {
           <span className="terminal-button terminal-button--minimize"></span>
           <span className="terminal-button terminal-button--maximize"></span>
         </div>
-        <div className="terminal-title">eve@corner:~</div>
+        <div className="terminal-title">eve@portfolio:~</div>
       </div>
       
       <div className="terminal-body">
@@ -81,17 +92,35 @@ const Terminal: React.FC = () => {
           )}
           
           {phase >= 3 && (
-            <div className="main-prompt">
-              <div className="prompt-line">
-                <span className="terminal-prompt">eve@corner:~$</span>
-                <span className="terminal-command">whoami</span>
+            <div className="main-session">
+              <div className="command-line">
+                <span className="prompt">eve@portfolio:~$</span>
+                <span className="command">whoami</span>
               </div>
-              <div className="output-line">
-                <span className="terminal-output">EVE BOUFFARD</span>
+              <div className="output">EVE BOUFFARD</div>
+              
+              <div className="command-line">
+                <span className="prompt">eve@portfolio:~$</span>
+                <span className="command">cat about.txt</span>
               </div>
-              <div className="prompt-line current">
-                <span className="terminal-prompt">eve@corner:~$</span>
-                <span className="terminal-command">cat skills.txt</span>
+              <div className="output">Designing in code_</div>
+              <div className="output">I design and build internal tools at Y Combinator</div>
+              
+              <div className="command-line">
+                <span className="prompt">eve@portfolio:~$</span>
+                <span className="command">ls links/</span>
+              </div>
+              <div className="links-output">
+                <a href="https://github.com/evebouf" target="_blank" rel="noopener noreferrer" className="terminal-link">github</a>
+                <a href="https://www.linkedin.com/in/eve-bouffard/" target="_blank" rel="noopener noreferrer" className="terminal-link">linkedin</a>
+                <a href="https://x.com/eve_bouff" target="_blank" rel="noopener noreferrer" className="terminal-link">twitter</a>
+                <button onClick={copyEmailToClipboard} className="terminal-link email-link">
+                  {emailCopied ? 'copied!' : 'email'}
+                </button>
+              </div>
+              
+              <div className="command-line current">
+                <span className="prompt">eve@portfolio:~$</span>
                 {showCursor && <span className="terminal-cursor">█</span>}
               </div>
             </div>

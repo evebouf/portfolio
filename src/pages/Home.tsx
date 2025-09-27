@@ -37,7 +37,7 @@ const Home: React.FC = () => {
           <Terminal />
         </div>
 
-        <div className="tagline">
+        {/* <div className="tagline">
           <div className="terminal-text">
             Designing in code<span className="cursor">_</span>
           </div>
@@ -47,10 +47,10 @@ const Home: React.FC = () => {
               Y Combinator
             </a>
           </div>
-        </div>
+        </div> */}
 
 
-        <div className="nav-links">
+        {/* <div className="nav-links">
           <a href="https://github.com/evebouf" target="_blank" rel="noopener noreferrer" className="nav-link">
             GitHub
           </a>
@@ -63,7 +63,7 @@ const Home: React.FC = () => {
           <button onClick={copyEmailToClipboard} className="nav-link email-button">
             {emailCopied ? '✨ Copied!' : 'Email'}
           </button>
-        </div>
+        </div> */}
       </div>
 
       <div className="footer-icons">

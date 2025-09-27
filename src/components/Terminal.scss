@@ -9,8 +9,8 @@
 .terminal {
   width: 280px;
   height: 200px;
-  background: #5A2EE8;
-  border-color: #5A2EE8;
+  background: #FEFEE5;
+  border-color: #333;
     border-width: 1px;
     border-style: solid;
     border-radius: 8px 8px 0px 0px;
@@ -30,10 +30,9 @@
   &-header {
     height: 28px;
     background:#FEFEE5;
-    // border-color: #4D22DA;
-    // border-width: 1px;
-    // border-style: solid;
-    // border-radius: 8px 8px 0px 0px;
+    border-bottom-color: #333;
+    border-bottom-width: 1px;
+    border-bottom-style: solid;
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -111,7 +110,7 @@
   }
   
   &-cursor {
-    color: #00ff41;
+    color: #333;
     animation: cursorBlink 1.2s infinite;
   }
 }
@@ -141,46 +140,74 @@
   
   .progress-fill {
     height: 100%;
-    background: #00cc33;
     width: 0%;
     animation: progressFill 2s ease-out forwards;
   }
 }
 
-// Main prompt styles
-.main-prompt {
-  .prompt-line {
+// Main session styles
+.main-session {
+  font-size: 10px;
+  line-height: 1.4;
+  
+  .command-line {
     display: flex;
     align-items: center;
-    margin-bottom: 4px;
+    margin-bottom: 2px;
     
     &.current {
       animation: currentLine 1s ease-in-out infinite alternate;
     }
   }
   
-  .output-line {
-    margin-bottom: 8px;
-    margin-left: 20px;
+  .prompt {
+    color: #333;
+    margin-right: 6px;
   }
   
-  .terminal-prompt {
-    color: #00ff41;
-    font-size: 11px;
-    margin-right: 8px;
-  }
-  
-  .terminal-command {
-    color: #ffffff;
-    font-size: 11px;
+  .command {
+    color: #333;
     margin-right: 4px;
   }
   
-  .terminal-output {
-    color: #ffbd2e;
-    font-size: 11px;
-    font-weight: bold;
-    animation: outputGlow 2s ease-in-out infinite alternate;
+  .output {
+    color: #333;
+    margin-bottom: 2px;
+    margin-left: 16px;
+  }
+  
+  .links-output {
+    margin-left: 16px;
+    margin-bottom: 4px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+  }
+  
+  .terminal-link {
+    color: #333;
+    text-decoration: underline;
+    text-underline-offset: 2px;
+    text-decoration-style: dotted;
+    background: none;
+    border: none;
+    cursor: pointer;
+
+    font-family: inherit;
+    font-size: inherit;
+    transition: all 0.2s ease;
+    
+    &:hover {
+      color: #ffffff;
+    }
+    
+    &.email-link {
+      color: #333;
+      
+      &:hover {
+        color: #ffffff;
+      }
+    }
   }
 }
 
