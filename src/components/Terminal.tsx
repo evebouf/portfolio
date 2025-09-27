@@ -8,10 +8,11 @@ const Terminal: React.FC = () => {
   const [emailCopied, setEmailCopied] = useState(false);
 
   const sequences = [
-    { text: 'SYSTEM BOOT...', delay: 800 },
-    { text: 'LOADING...', delay: 600 },
-    { text: 'AUTHENTICATED', delay: 400 },
-    { text: 'READY', delay: 1000 }
+    // { text: 'Gathering context...', delay: 800 },
+    { text: 'Hi...', delay: 600 },
+    { text: 'Beep boop boop...', delay: 400 },
+    { text: ' [ Verified ]', delay: 400 },
+    { text: 'Ready. Set. Go.', delay: 1000 }
   ];
 
   const copyEmailToClipboard = async () => {
@@ -52,7 +53,7 @@ const Terminal: React.FC = () => {
         
         return () => clearInterval(typeInterval);
       }
-    }, phase === 0 ? 500 : 200);
+    }, phase === 0 ? 1000 : 1000);
 
     return () => clearTimeout(timer);
   }, [phase]);
