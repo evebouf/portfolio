@@ -9,7 +9,7 @@ const Terminal: React.FC = () => {
 
   const sequences = [
     { text: 'SYSTEM BOOT...', delay: 800 },
-    { text: 'LOADING USER...', delay: 600 },
+    { text: 'LOADING...', delay: 600 },
     { text: 'AUTHENTICATED', delay: 400 },
     { text: 'READY', delay: 1000 }
   ];
@@ -74,7 +74,7 @@ const Terminal: React.FC = () => {
           <span className="terminal-button terminal-button--minimize"></span>
           <span className="terminal-button terminal-button--maximize"></span>
         </div>
-        <div className="terminal-title">eve@portfolio:~</div>
+        <div className="terminal-title">eve@code:~</div>
       </div>
       
       <div className="terminal-body">
@@ -94,20 +94,20 @@ const Terminal: React.FC = () => {
           {phase >= 3 && (
             <div className="main-session">
               <div className="command-line">
-                <span className="prompt">eve@portfolio:~$</span>
+                <span className="prompt">eve@code:~$</span>
                 <span className="command">whoami</span>
               </div>
-              <div className="output">EVE BOUFFARD</div>
+              <div className="output">eve_bouffard</div>
               
               <div className="command-line">
-                <span className="prompt">eve@portfolio:~$</span>
+                <span className="prompt">eve@code:~$</span>
                 <span className="command">cat about.txt</span>
               </div>
-              <div className="output">Designing in code_</div>
-              <div className="output">I design and build internal tools at Y Combinator</div>
+              {/* <div className="output">Designing in code_</div> */}
+              <div className="output">i design and build internal tools at <a href="https://www.ycombinator.com/" target="_blank" rel="noopener noreferrer" className="terminal-link">Y Combinator</a></div>
               
               <div className="command-line">
-                <span className="prompt">eve@portfolio:~$</span>
+                <span className="prompt">eve@code:~$</span>
                 <span className="command">ls links/</span>
               </div>
               <div className="links-output">
@@ -120,7 +120,7 @@ const Terminal: React.FC = () => {
               </div>
               
               <div className="command-line current">
-                <span className="prompt">eve@portfolio:~$</span>
+                <span className="prompt">eve@code:~$</span>
                 {showCursor && <span className="terminal-cursor">█</span>}
               </div>
             </div>
