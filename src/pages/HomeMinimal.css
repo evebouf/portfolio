@@ -75,20 +75,22 @@ a {
   top: 2rem;
   right: 2rem;
   background: transparent;
-  border: 1px solid var(--border-color);
+  /* border: 1px solid var(--border-color); */
   color: var(--text-color);
   padding: 0.75rem;
-  border-radius: 50%;
+  /* border-radius: 50%; */
   display: flex;
   align-items: center;
   justify-content: center;
   cursor: pointer;
   transition: all 0.2s ease;
+  height: 28px;
+  width: 28px;
   z-index: 10;
 }
 
 .theme-toggle:hover {
-  background: var(--text-color);
+  background: #4D22DA;
   color: var(--bg-color);
 }
 
@@ -228,8 +230,7 @@ a {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  font-size: 0.75rem;
-  color: var(--accent-color);
+  font-size: 0.6rem;
   pointer-events: none;
 }
 

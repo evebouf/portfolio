@@ -104,7 +104,7 @@ const Terminal: React.FC = () => {
                 <span className="command">cat about.txt</span>
               </div>
               {/* <div className="output">Designing in code_</div> */}
-              <div className="output">i design and build internal tools at <a href="https://www.ycombinator.com/" target="_blank" rel="noopener noreferrer" className="terminal-link">Y Combinator</a></div>
+              <div className="output">i design and build internal tools at <a href="https://www.ycombinator.com/" target="_blank" rel="noopener noreferrer" className="terminal-link"> <img src="/yc.png" alt="YC" className="yc-logo" /> Y Combinator</a></div>
               
               <div className="command-line">
                 <span className="prompt">eve@code:~$</span>
