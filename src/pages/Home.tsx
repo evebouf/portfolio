@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import './HomeMinimal.css';
+import Terminal from '../components/Terminal';
 
 const Home: React.FC = () => {
   const [isDarkMode, setIsDarkMode] = useState(false);
@@ -33,7 +34,7 @@ const Home: React.FC = () => {
 
       <div className="main-content">
         <div className="logo-section">
-          <img src="/hero-graphic.png" alt="EB Logo" className="hero-graphic" />
+          <Terminal />
         </div>
 
         <div className="tagline">

@@ -1,0 +1,229 @@
+@font-face {
+  font-family: 'Departure Mono';
+  src: local('Departure Mono'), local('DepartureMono');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+.terminal {
+  width: 280px;
+  height: 200px;
+  background: #5A2EE8;
+  border-color: #5A2EE8;
+    border-width: 1px;
+    border-style: solid;
+    border-radius: 8px 8px 0px 0px;
+  border-radius: 8px;
+  position: relative;
+  overflow: hidden;
+  font-family: 'Departure Mono', 'Courier New', monospace;
+  
+  &--booting {
+    animation: bootFlicker 0.5s ease-in-out;
+  }
+  
+  &--ready {
+    animation: terminalGlow 3s ease-in-out infinite alternate;
+  }
+  
+  &-header {
+    height: 28px;
+    background:#FEFEE5;
+    // border-color: #4D22DA;
+    // border-width: 1px;
+    // border-style: solid;
+    // border-radius: 8px 8px 0px 0px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 12px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  }
+  
+  &-buttons {
+    display: flex;
+    gap: 6px;
+  }
+  
+  &-button {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    
+    &--close {
+      background: #ff5f57;
+    }
+    
+    &--minimize {
+      background: #ffbd2e;
+    }
+    
+    &--maximize {
+      background: #28ca42;
+    }
+  }
+  
+  &-title {
+    font-size: 11px;
+    color: rgba(255, 255, 255, 0.8);
+    font-weight: 500;
+  }
+  
+  &-body {
+    height: calc(100% - 28px);
+    position: relative;
+    padding: 12px;
+    overflow: hidden;
+  }
+  
+  &-content {
+    position: relative;
+    z-index: 2;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+  
+  &-scanlines {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    pointer-events: none;
+    animation: scanlines 2s linear infinite;
+  }
+  
+  &-glow {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: radial-gradient(
+      ellipse at center,
+      rgba(77, 34, 218, 0.1) 0%,
+      transparent 70%
+    );
+    pointer-events: none;
+  }
+  
+  &-cursor {
+    color: #00ff41;
+    animation: cursorBlink 1.2s infinite;
+  }
+}
+
+// Boot sequence styles
+.boot-sequence {
+  .boot-line {
+    display: flex;
+    align-items: center;
+    margin-bottom: 8px;
+  }
+  
+  .boot-text {
+    color: #00ff41;
+    font-size: 12px;
+    animation: textGlow 2s ease-in-out infinite alternate;
+  }
+}
+
+.progress-bar {
+  width: 100%;
+  height: 4px;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 2px;
+  margin-top: 8px;
+  overflow: hidden;
+  
+  .progress-fill {
+    height: 100%;
+    background: #00cc33;
+    width: 0%;
+    animation: progressFill 2s ease-out forwards;
+  }
+}
+
+// Main prompt styles
+.main-prompt {
+  .prompt-line {
+    display: flex;
+    align-items: center;
+    margin-bottom: 4px;
+    
+    &.current {
+      animation: currentLine 1s ease-in-out infinite alternate;
+    }
+  }
+  
+  .output-line {
+    margin-bottom: 8px;
+    margin-left: 20px;
+  }
+  
+  .terminal-prompt {
+    color: #00ff41;
+    font-size: 11px;
+    margin-right: 8px;
+  }
+  
+  .terminal-command {
+    color: #ffffff;
+    font-size: 11px;
+    margin-right: 4px;
+  }
+  
+  .terminal-output {
+    color: #ffbd2e;
+    font-size: 11px;
+    font-weight: bold;
+    animation: outputGlow 2s ease-in-out infinite alternate;
+  }
+}
+
+@keyframes bootFlicker {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.8; }
+}
+
+@keyframes cursorBlink {
+  0%, 50% { opacity: 1; }
+  51%, 100% { opacity: 0; }
+}
+
+@keyframes progressFill {
+  0% { width: 0%; }
+  100% { width: 100%; }
+}
+
+@keyframes scanlines {
+  0% { transform: translateY(0); }
+  100% { transform: translateY(4px); }
+}
+
+@keyframes currentLine {
+  0% { opacity: 1; }
+  100% { opacity: 0.7; }
+}
+
+// Responsive adjustments
+@media (max-width: 768px) {
+  .terminal {
+    width: 240px;
+    height: 180px;
+    
+    &-body {
+      padding: 8px;
+    }
+    
+    .boot-text,
+    .terminal-prompt,
+    .terminal-command,
+    .terminal-output {
+      font-size: 10px;
+    }
+  }
+}
