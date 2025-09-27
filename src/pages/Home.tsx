@@ -22,7 +22,7 @@ const Home: React.FC = () => {
 
   return (
     <div className="home-container">
-      <button
+      {/* <button
         className="theme-toggle"
         onClick={() => setIsDarkMode(!isDarkMode)}
         aria-label="Toggle dark mode"
@@ -30,7 +30,7 @@ const Home: React.FC = () => {
         <span className="material-icons">
           {isDarkMode ? 'light_mode' : 'dark_mode'}
         </span>
-      </button>
+      </button> */}
 
       <div className="main-content">
         <div className="logo-section">

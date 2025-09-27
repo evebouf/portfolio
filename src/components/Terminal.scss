@@ -133,6 +133,11 @@
   }
 }
 
+ .terminal-title {
+    color: #333;
+    font-size: 0.6rem;
+}
+
 // Boot sequence styles
 .boot-sequence {
   .boot-line {
@@ -170,7 +175,6 @@
   
   .command-line {
     display: flex;
-    align-items: center;
     margin-bottom: 2px;
     
     &.current {
@@ -180,12 +184,11 @@
   
   .prompt {
     color: #333;
-    margin-right: 6px;
   }
   
   .command {
     color: #333;
-    margin-right: 4px;
+    // margin-right: 4px;
   }
   
   .output {
@@ -260,7 +263,7 @@
 
 @keyframes currentLine {
   0% { opacity: 1; }
-  100% { opacity: 0.7; }
+  100% { opacity: 1; }
 }
 
 // Responsive adjustments

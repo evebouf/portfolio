@@ -74,7 +74,7 @@ const Terminal: React.FC = () => {
           <span className="terminal-button terminal-button--minimize"></span>
           <span className="terminal-button terminal-button--maximize"></span>
         </div>
-        <div className="terminal-title">eve@code:~</div>
+        <div className="terminal-title">_zsh</div>
       </div>
       
       <div className="terminal-body">
@@ -93,6 +93,9 @@ const Terminal: React.FC = () => {
           
           {phase >= 3 && (
             <div className="main-session">
+              <div className="command-line">
+                <span className="prompt">Last login: 09.26.25 on console</span>
+              </div>
               <div className="command-line">
                 <span className="prompt">eve@code:~$</span>
                 <span className="command">whoami</span>
