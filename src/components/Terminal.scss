@@ -51,24 +51,33 @@
     border-radius: 50%;
     
     &--close {
-    //   background: lighten(#ff5f57, 20%);
       border-color: #ff5f57;
       border-width: 1px;
       border-style: solid;
+
+      &:hover {
+        background: lighten(#ff5f57, 20%);
+      }
     }
     
     &--minimize {
-    //   background:lighten(#ffbd2e, 20%);
       border-color: #ffbd2e;
       border-width: 1px;
       border-style: solid;
+
+      &:hover {
+        background: lighten(#ffbd2e, 20%);
+      }
     }
     
     &--maximize {
-    //   background: lighten(#28ca42, 20%);
       border-color: #28ca42;
       border-width: 1px;
       border-style: solid;
+      
+      &:hover {
+        background: lighten(#28ca42, 20%);
+      }
     }
   }
   
