@@ -1,10 +1,19 @@
 @import url('https://fonts.googleapis.com/icon?family=Material+Icons');
+@import url('https://fonts.googleapis.com/css2?family=Literata:wght@300&display=swap');
 
 @font-face {
   font-family: 'Departure Mono';
   src: local('Departure Mono'), local('DepartureMono');
   font-weight: normal;
   font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'EB Garamond';
+  src: local('EB Garamond'), local('EBGaramond');
+  font-weight: normal;
+  font-style: italic;
   font-display: swap;
 }
 
@@ -87,29 +96,19 @@ a {
   margin-bottom: 2rem;
 }
 
-.logo-circle {
-  width: 72px;
-  height: 72px;
-  border: 1px solid var(--accent-color);
-  border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.logo-text {
-  font-size: 0.75rem;
-  letter-spacing: 0.15em;
-  font-weight: 600;
-  color: var(--accent-color);
+.hero-graphic {
+  width: 80px;
+  height: auto;
+  object-fit: contain;
 }
 
 /* Tagline */
 .tagline {
-  font-family: 'Departure Mono', 'Courier New', monospace;
-  font-style: normal;
+  font-family: 'Literata';
+  font-weight: 500;
   font-size: 1.25rem;
   line-height: 1.6;
+  text-transform: lowercase;
   color: var(--accent-color);
   margin: 1.5rem 0 2rem;
 }

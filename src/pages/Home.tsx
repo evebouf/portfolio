@@ -33,13 +33,11 @@ const Home: React.FC = () => {
 
       <div className="main-content">
         <div className="logo-section">
-          <div className="logo-circle">
-            <div className="logo-text">EB</div>
-          </div>
+          <img src="/hero-graphic.png" alt="EB Logo" className="hero-graphic" />
         </div>
 
         <div className="tagline">
-          Designing in ©ode<br />
+          Designing in code<br />
           I design and build internal tools at{" "}
           <a href="https://www.ycombinator.com" target="_blank" rel="noopener noreferrer" className="yc-link">
             Y Combinator
