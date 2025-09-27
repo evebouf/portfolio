@@ -119,16 +119,16 @@ a {
 .terminal-text {
   font-family: 'Departure Mono', 'Courier New', monospace;
   font-weight: normal;
-  font-size: 1.5rem;
+  font-size: 1rem;
   line-height: 1.4;
   color: var(--text-color);
-  margin-bottom: 1rem;
+  margin-bottom: 2rem;
 }
 
 .subtitle {
-  font-family: 'Playfair Display', serif;
+  font-family: 'departure mono';
   font-weight: 300;
-  font-size: 1.1rem;
+  font-size: 1.0rem;
   line-height: 1.5;
   text-transform: none;
 }
@@ -166,7 +166,7 @@ a {
 }
 
 .browser-icon {
-  font-size: 0.75rem;
+  font-size: 1rem;
 }
 
 .browser-button:hover {
@@ -176,7 +176,8 @@ a {
 /* Y Combinator link */
 .yc-link {
   color: var(--text-color);
-  text-decoration: underline;
+  text-decoration: underline dotted;
+  text-underline-offset: 4px;
   transition: color 0.2s ease;
 }
 
@@ -201,7 +202,10 @@ a {
   background: none;
   border: none;
   cursor: pointer;
+  text-transform: uppercase;
   font-family: 'Departure Mono', 'Courier New', monospace;
+  text-decoration: underline dotted;
+  text-underline-offset: 4px;
 }
 
 .nav-link:hover {
