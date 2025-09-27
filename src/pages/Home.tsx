@@ -66,11 +66,17 @@ const Home: React.FC = () => {
       </div>
 
       <div className="footer-icons">
-        <div className="footer-icon">MADE IN SF.CA</div>
-        <div className="footer-icon">DEV</div>
-        <div className="footer-icon">DESIGN</div>
-        <div className="footer-icon">BRANDING</div>
-        <div className="footer-text">INTERNET 2025</div>
+        <div className="footer-left">
+          <div className="footer-icon">MADE IN SF.CA</div>
+        </div>
+        <div className="footer-center">
+          <div className="footer-icon">DEV</div>
+          <div className="footer-icon">DESIGN</div>
+          <div className="footer-icon">BRANDING</div>
+        </div>
+        <div className="footer-right">
+          <div className="footer-text">INTERNET 2025</div>
+        </div>
       </div>
     </div>
   );

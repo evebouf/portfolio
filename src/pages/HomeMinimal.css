@@ -1,5 +1,5 @@
 @import url('https://fonts.googleapis.com/icon?family=Material+Icons');
-@import url('https://fonts.googleapis.com/css2?family=Literata:wght@300&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@300;400;500&display=swap');
 
 @font-face {
   font-family: 'Departure Mono';
@@ -17,8 +17,17 @@
   font-display: swap;
 }
 
+@font-face {
+  font-family: 'Lavishly Yours';
+  src: local('Lavishly Yours'), local('LavishlyYours');
+  text-transform: lowercase;
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
 :root[data-theme='light'] {
-  --bg-color: #EEEEE7;
+  --bg-color: #FEFEE5;
   --text-color: #333333;
   --border-color: #e0e0e0;
   --accent-color: #666666;
@@ -104,25 +113,24 @@ a {
 
 /* Tagline */
 .tagline {
-  margin: 1.5rem 0 2rem;
+  margin: 2rem 0 3rem;
 }
 
 .terminal-text {
   font-family: 'Departure Mono', 'Courier New', monospace;
   font-weight: normal;
-  font-size: 1.25rem;
-  line-height: 1.6;
+  font-size: 1.5rem;
+  line-height: 1.4;
   color: var(--text-color);
-  margin-bottom: 0.5rem;
+  margin-bottom: 1rem;
 }
 
 .subtitle {
-  font-family: 'Literata';
-  font-weight: 500;
-  font-size: 1.25rem;
-  line-height: 1.6;
-  text-transform: lowercase;
-  color: var(--accent-color);
+  font-family: 'Playfair Display', serif;
+  font-weight: 300;
+  font-size: 1.1rem;
+  line-height: 1.5;
+  text-transform: none;
 }
 
 .cursor {
@@ -219,6 +227,19 @@ a {
   font-size: 0.75rem;
   color: var(--accent-color);
   pointer-events: none;
+}
+
+.footer-left {
+  display: flex;
+}
+
+.footer-center {
+  display: flex;
+  gap: 1rem;
+}
+
+.footer-right {
+  display: flex;
 }
 
 .footer-icon {
