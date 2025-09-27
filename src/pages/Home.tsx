@@ -37,11 +37,15 @@ const Home: React.FC = () => {
         </div>
 
         <div className="tagline">
-          Designing in code<br />
-          I design and build internal tools at{" "}
-          <a href="https://www.ycombinator.com" target="_blank" rel="noopener noreferrer" className="yc-link">
-            Y Combinator
-          </a>
+          <div className="terminal-text">
+            Designing in code<span className="cursor">_</span>
+          </div>
+          <div className="subtitle">
+            I design and build internal tools at{" "}
+            <a href="https://www.ycombinator.com" target="_blank" rel="noopener noreferrer" className="yc-link">
+              Y Combinator
+            </a>
+          </div>
         </div>
 
 
@@ -62,9 +66,10 @@ const Home: React.FC = () => {
       </div>
 
       <div className="footer-icons">
-        <div className="footer-icon">WEB</div>
-        <div className="footer-icon">SF, CA</div>
+        <div className="footer-icon">MADE IN SF.CA</div>
         <div className="footer-icon">DEV</div>
+        <div className="footer-icon">DESIGN</div>
+        <div className="footer-icon">BRANDING</div>
         <div className="footer-text">INTERNET 2025</div>
       </div>
     </div>

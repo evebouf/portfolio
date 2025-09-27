@@ -104,13 +104,38 @@ a {
 
 /* Tagline */
 .tagline {
+  margin: 1.5rem 0 2rem;
+}
+
+.terminal-text {
+  font-family: 'Departure Mono', 'Courier New', monospace;
+  font-weight: normal;
+  font-size: 1.25rem;
+  line-height: 1.6;
+  color: var(--text-color);
+  margin-bottom: 0.5rem;
+}
+
+.subtitle {
   font-family: 'Literata';
   font-weight: 500;
   font-size: 1.25rem;
   line-height: 1.6;
   text-transform: lowercase;
   color: var(--accent-color);
-  margin: 1.5rem 0 2rem;
+}
+
+.cursor {
+  animation: blink 1s infinite;
+}
+
+@keyframes blink {
+  0%, 50% {
+    opacity: 1;
+  }
+  51%, 100% {
+    opacity: 0;
+  }
 }
 
 /* Browser buttons */
@@ -186,12 +211,11 @@ a {
 .footer-icons {
   position: fixed;
   bottom: 2rem;
-  left: 0;
-  right: 0;
+  left: 2rem;
+  right: 2rem;
   display: flex;
-  gap: 3rem;
+  justify-content: space-between;
   align-items: center;
-  justify-content: center;
   font-size: 0.75rem;
   color: var(--accent-color);
   pointer-events: none;
