@@ -100,7 +100,7 @@
     height: 100%;
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    // justify-content: center;
   }
   
   &-scanlines {
@@ -142,7 +142,7 @@
 .boot-sequence {
   .boot-line {
     display: flex;
-    align-items: center;
+    // align-items: center;
     margin-bottom: 8px;
   }
   
@@ -184,6 +184,7 @@
   
   .prompt {
     color: #333;
+    opacity: 0.5;
   }
   
   .command {
@@ -194,7 +195,8 @@
   .output {
     color: #333;
     margin-bottom: 2px;
-    margin-left: 16px;
+
+    // margin-left: 16px;
   }
   
   .links-output {
