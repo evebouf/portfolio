@@ -259,7 +259,7 @@ const Homepage: React.FC = () => {
             >
               {project.number}
             </span>
-            <div>
+            <div style={{ flex: 1 }}>
               <h3
                 className="project-title"
                 style={{
@@ -268,11 +268,11 @@ const Homepage: React.FC = () => {
                   marginBottom: '4px',
                   display: 'flex',
                   alignItems: 'center',
-                  gap: '8px',
+                  justifyContent: 'space-between',
                 }}
               >
-                {project.title}
-                <span style={{ fontSize: '10px', opacity: 0.4, fontWeight: 'normal', fontStyle: 'italic' }}>
+                <span className="project-title-text">{project.title}</span>
+                <span style={{ fontSize: '10px', opacity: 0.4, fontWeight: 'normal', fontStyle: 'italic', whiteSpace: 'nowrap', marginLeft: '8px' }}>
                   coming soon
                 </span>
               </h3>
@@ -532,7 +532,7 @@ const Homepage: React.FC = () => {
         .article-item:hover .article-title {
           text-decoration: underline;
         }
-        .project-item:hover .project-title {
+        .project-item:hover .project-title-text {
           text-decoration: underline;
         }
         .link-item:hover .link-title {
