@@ -5,6 +5,8 @@ import './styles/fonts.css';
 import Home from './pages/Home';
 import BlueprintPage from './pages/BlueprintPage';
 import MonoBlueprintPage from './pages/MonoBlueprintPage';
+import Homepage from './pages/Homepage';
+import Photography from './pages/Photography';
 
 const App: React.FC = () => {
   return (
@@ -15,6 +17,8 @@ const App: React.FC = () => {
             <Route path="/" element={<Home />} />
             <Route path="/blueprint" element={<BlueprintPage />} />
             <Route path="/mono-blueprint" element={<MonoBlueprintPage />} />
+            <Route path="/homepage" element={<Homepage />} />
+            <Route path="/photography" element={<Photography />} />
             <Route path="*" element={<MonoBlueprintPage />} />
           </Routes>
         </main>
