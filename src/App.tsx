@@ -14,7 +14,7 @@ const App: React.FC = () => {
       <div>
         <main>
           <Routes>
-            <Route path="/" element={<Home />} />
+            <Route path="/" element={<Homepage />} />
             <Route path="/mono-blueprint" element={<MonoBlueprintPage />} />
             <Route path="/homepage" element={<Homepage />} />
             <Route path="/photography" element={<Photography />} />

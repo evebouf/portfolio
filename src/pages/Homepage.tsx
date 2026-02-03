@@ -134,7 +134,7 @@ const Homepage: React.FC = () => {
               opacity: 0.85,
             }}
           >
-            Designer turned design engineer at <a href="https://www.ycombinator.com/" target="_blank" rel="noopener noreferrer" className="text-link">Y Combinator</a>, where I most recently redesigned and built the new YC homepage. Before YC, I was in school, but spent most of my time working on a virtual reality side project with ridiculously talented friends — <a href="https://www.linkedin.com/in/max-brodeur-urbas" target="_blank" rel="noopener noreferrer" className="text-link">Max</a> and <a href="https://www.linkedin.com/in/imad-dodin/" target="_blank" rel="noopener noreferrer" className="text-link">Imad</a>.
+            Designer turned design engineer at <a href="https://www.ycombinator.com/" target="_blank" rel="noopener noreferrer" className="text-link">Y Combinator</a>, where I most recently redesigned and built the new YC homepage. Before YC, I was in school, but spent most of my time working on a virtual reality game with ridiculously talented friends — <a href="https://www.linkedin.com/in/max-brodeur-urbas" target="_blank" rel="noopener noreferrer" className="text-link">Max</a> and <a href="https://www.linkedin.com/in/imad-dodin/" target="_blank" rel="noopener noreferrer" className="text-link">Imad</a>.
           </p>
         </div>
 
@@ -266,9 +266,15 @@ const Homepage: React.FC = () => {
                   fontSize: '12px',
                   fontWeight: 'bold',
                   marginBottom: '4px',
+                  display: 'flex',
+                  alignItems: 'center',
+                  gap: '8px',
                 }}
               >
                 {project.title}
+                <span style={{ fontSize: '10px', opacity: 0.4, fontWeight: 'normal', fontStyle: 'italic' }}>
+                  coming soon
+                </span>
               </h3>
               <p
                 style={{
