@@ -1,5 +1,4 @@
 import React, { useEffect } from 'react';
-import Nav from '../components/Nav';
 
 const Homepage: React.FC = () => {
   useEffect(() => {
@@ -28,6 +27,24 @@ const Homepage: React.FC = () => {
     },
   ];
 
+  const projects = [
+    {
+      number: '01',
+      title: 'YC Website',
+      description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore.',
+    },
+    {
+      number: '02',
+      title: 'YC Application',
+      description: 'Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo.',
+    },
+    {
+      number: '03',
+      title: 'YC Application Review Software',
+      description: 'Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.',
+    },
+  ];
+
   return (
     <div
       style={{
@@ -37,12 +54,10 @@ const Homepage: React.FC = () => {
         lineHeight: '1.5',
       }}
     >
-      <Nav />
-
       {/* Hero Section */}
       <section
         style={{
-          padding: '80px 40px 120px',
+          padding: '80px 40px 40px',
           textAlign: 'center',
           maxWidth: '800px',
           margin: '0 auto',
@@ -68,7 +83,8 @@ const Homepage: React.FC = () => {
             lineHeight: '1.7',
           }}
         >
-          Hi fellow human or agent, this is a corner of r<em style={{ fontStyle: 'italic' }}>eve</em>rie.
+          reverie /ˈrɛvəri/<br />
+          <em style={{ fontStyle: 'italic' }}>n.</em> a quiet, dreamy state of reflective or imaginative thought.
         </p>
       </section>
 
@@ -80,6 +96,71 @@ const Homepage: React.FC = () => {
           padding: '0 40px 80px',
         }}
       >
+        {/* About Section */}
+        <h2
+          style={{
+            fontSize: '12px',
+            fontWeight: 'bold',
+            marginBottom: '12px',
+            opacity: 0.5,
+            textTransform: 'uppercase',
+            letterSpacing: '0.05em',
+          }}
+        >
+          About
+        </h2>
+        <div
+          style={{
+            display: 'flex',
+            gap: '20px',
+            padding: '8px',
+            margin: '0 -8px 24px -8px',
+          }}
+        >
+          <span
+            style={{
+              fontSize: '12px',
+              opacity: 0.5,
+              width: '24px',
+              flexShrink: 0,
+            }}
+          >
+            Hi
+          </span>
+          <p
+            style={{
+              fontSize: '12px',
+              lineHeight: '1.7',
+              opacity: 0.85,
+            }}
+          >
+            Designer turned design engineer at <a href="https://www.ycombinator.com/" target="_blank" rel="noopener noreferrer" className="text-link">Y Combinator</a>, where I most recently redesigned and built the new YC homepage. Before YC, I was in school, but spent most of my time working on a virtual reality side project with ridiculously talented friends — <a href="https://www.linkedin.com/in/max-brodeur-urbas" target="_blank" rel="noopener noreferrer" className="text-link">Max</a> and <a href="https://www.linkedin.com/in/imad-dodin/" target="_blank" rel="noopener noreferrer" className="text-link">Imad</a>.
+          </p>
+        </div>
+
+        {/* Horizontal Divider */}
+        <hr
+          style={{
+            border: 'none',
+            borderTop: '1px solid #0000FE',
+            opacity: 0.2,
+            margin: '20px 0',
+          }}
+        />
+
+        {/* Writing Section */}
+        <h2
+          style={{
+            fontSize: '12px',
+            fontWeight: 'bold',
+            marginBottom: '16px',
+            opacity: 0.5,
+            textTransform: 'uppercase',
+            letterSpacing: '0.05em',
+          }}
+        >
+          Writing
+        </h2>
         {articles.map((article) => (
           <a
             key={article.number}
@@ -87,9 +168,8 @@ const Homepage: React.FC = () => {
             style={{
               display: 'flex',
               gap: '20px',
-              marginBottom: '40px',
-              padding: '12px',
-              margin: '0 -12px 40px -12px',
+              padding: '8px',
+              margin: '0 -8px 12px -8px',
               borderRadius: '4px',
               cursor: 'pointer',
               transition: 'all 0.2s ease',
@@ -100,7 +180,7 @@ const Homepage: React.FC = () => {
           >
             <span
               style={{
-                fontSize: '11px',
+                fontSize: '12px',
                 opacity: 0.5,
                 width: '24px',
                 flexShrink: 0,
@@ -114,16 +194,16 @@ const Homepage: React.FC = () => {
                 style={{
                   fontSize: '12px',
                   fontWeight: 'bold',
-                  marginBottom: '8px',
+                  marginBottom: '4px',
                 }}
               >
                 {article.title}
               </h3>
               <p
                 style={{
-                  fontSize: '11px',
+                  fontSize: '12px',
                   opacity: 0.75,
-                  lineHeight: '1.7',
+                  lineHeight: '1.6',
                 }}
               >
                 {article.text}
@@ -131,6 +211,224 @@ const Homepage: React.FC = () => {
             </div>
           </a>
         ))}
+
+        {/* Horizontal Divider */}
+        <hr
+          style={{
+            border: 'none',
+            borderTop: '1px solid #0000FE',
+            opacity: 0.2,
+            margin: '20px 0',
+          }}
+        />
+
+        {/* Projects Section */}
+        <h2
+          style={{
+            fontSize: '12px',
+            fontWeight: 'bold',
+            marginBottom: '16px',
+            opacity: 0.5,
+            textTransform: 'uppercase',
+            letterSpacing: '0.05em',
+          }}
+        >
+          Projects
+        </h2>
+        {projects.map((project) => (
+          <div
+            key={project.number}
+            style={{
+              display: 'flex',
+              gap: '20px',
+              padding: '8px',
+              margin: '0 -8px 16px -8px',
+              borderRadius: '4px',
+              cursor: 'pointer',
+              transition: 'all 0.2s ease',
+            }}
+            className="project-item"
+          >
+            <span
+              style={{
+                fontSize: '12px',
+                opacity: 0.5,
+                width: '24px',
+                flexShrink: 0,
+              }}
+            >
+              {project.number}
+            </span>
+            <div>
+              <h3
+                className="project-title"
+                style={{
+                  fontSize: '12px',
+                  fontWeight: 'bold',
+                  marginBottom: '4px',
+                }}
+              >
+                {project.title}
+              </h3>
+              <p
+                style={{
+                  fontSize: '12px',
+                  opacity: 0.75,
+                  lineHeight: '1.6',
+                }}
+              >
+                {project.description}
+              </p>
+            </div>
+          </div>
+        ))}
+
+        {/* Horizontal Divider */}
+        <hr
+          style={{
+            border: 'none',
+            borderTop: '1px solid #0000FE',
+            opacity: 0.2,
+            margin: '20px 0',
+          }}
+        />
+
+        {/* Photography Section */}
+        <h2
+          style={{
+            fontSize: '12px',
+            fontWeight: 'bold',
+            marginBottom: '16px',
+            opacity: 0.5,
+            textTransform: 'uppercase',
+            letterSpacing: '0.05em',
+          }}
+        >
+          Photography
+        </h2>
+        <a
+          href="/photography"
+          style={{
+            display: 'flex',
+            gap: '20px',
+            padding: '8px',
+            margin: '0 -8px 12px -8px',
+            borderRadius: '4px',
+            cursor: 'pointer',
+            transition: 'all 0.2s ease',
+            textDecoration: 'none',
+            color: 'inherit',
+          }}
+          className="link-item"
+        >
+          <span style={{ fontSize: '12px', opacity: 0.5, width: '24px', flexShrink: 0 }}>→</span>
+          <div>
+            <h3 className="link-title" style={{ fontSize: '12px', fontWeight: 'bold', marginBottom: '4px' }}>
+              Photo Gallery
+            </h3>
+            <p style={{ fontSize: '12px', opacity: 0.75, lineHeight: '1.6' }}>
+              A collection of photographs.
+            </p>
+          </div>
+        </a>
+
+        {/* Horizontal Divider */}
+        <hr
+          style={{
+            border: 'none',
+            borderTop: '1px solid #0000FE',
+            opacity: 0.2,
+            margin: '20px 0',
+          }}
+        />
+
+        {/* Bookmarks Section */}
+        <h2
+          style={{
+            fontSize: '12px',
+            fontWeight: 'bold',
+            marginBottom: '16px',
+            opacity: 0.5,
+            textTransform: 'uppercase',
+            letterSpacing: '0.05em',
+          }}
+        >
+          Bookmarks
+        </h2>
+        <a
+          href="/bookmarks"
+          style={{
+            display: 'flex',
+            gap: '20px',
+            padding: '8px',
+            margin: '0 -8px 12px -8px',
+            borderRadius: '4px',
+            cursor: 'pointer',
+            transition: 'all 0.2s ease',
+            textDecoration: 'none',
+            color: 'inherit',
+          }}
+          className="link-item"
+        >
+          <span style={{ fontSize: '12px', opacity: 0.5, width: '24px', flexShrink: 0 }}>→</span>
+          <div>
+            <h3 className="link-title" style={{ fontSize: '12px', fontWeight: 'bold', marginBottom: '4px' }}>
+              Saved Links
+            </h3>
+            <p style={{ fontSize: '12px', opacity: 0.75, lineHeight: '1.6' }}>
+              Interesting things from around the web.
+            </p>
+          </div>
+        </a>
+
+        {/* Horizontal Divider */}
+        <hr
+          style={{
+            border: 'none',
+            borderTop: '1px solid #0000FE',
+            opacity: 0.2,
+            margin: '20px 0',
+          }}
+        />
+
+        {/* Sims 3 Section */}
+        <h2
+          style={{
+            fontSize: '12px',
+            fontWeight: 'bold',
+            marginBottom: '16px',
+            opacity: 0.5,
+            textTransform: 'uppercase',
+            letterSpacing: '0.05em',
+          }}
+        >
+          Sims 3
+        </h2>
+        <a
+          href="/sims-3"
+          style={{
+            display: 'flex',
+            gap: '20px',
+            padding: '8px',
+            margin: '0 -8px 12px -8px',
+            borderRadius: '4px',
+            cursor: 'pointer',
+            transition: 'all 0.2s ease',
+            textDecoration: 'none',
+            color: 'inherit',
+          }}
+          className="link-item"
+        >
+          <span style={{ fontSize: '12px', opacity: 0.5, width: '24px', flexShrink: 0 }}>→</span>
+          <div>
+            <h3 className="link-title" style={{ fontSize: '12px', fontWeight: 'bold', marginBottom: '4px' }}>
+              Sims 3 Adventures
+            </h3>
+            <p style={{ fontSize: '12px', opacity: 0.75, lineHeight: '1.6' }}>
+              Stories and screenshots from The Sims 3.
+            </p>
+          </div>
+        </a>
       </section>
 
       {/* Footer */}
@@ -149,6 +447,22 @@ const Homepage: React.FC = () => {
       <style>{`
         .article-item:hover .article-title {
           text-decoration: underline;
+        }
+        .project-item:hover .project-title {
+          text-decoration: underline;
+        }
+        .link-item:hover .link-title {
+          text-decoration: underline;
+        }
+        .text-link {
+          color: inherit;
+          text-decoration: underline;
+          text-decoration-color: rgba(0, 0, 254, 0.2);
+          text-underline-offset: 2px;
+          transition: all 0.2s ease;
+        }
+        .text-link:hover {
+          text-decoration-color: rgba(0, 0, 254, 0.6);
         }
       `}</style>
     </div>

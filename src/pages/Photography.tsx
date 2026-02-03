@@ -1,5 +1,4 @@
 import React, { useEffect } from 'react';
-import Nav from '../components/Nav';
 
 // Import all photos
 import photo1 from '../photos/01E116EF-F7FE-4811-B7AA-C10B07D18769_1_105_c.jpeg';
@@ -58,8 +57,6 @@ const Photography: React.FC = () => {
         lineHeight: '1.5',
       }}
     >
-      <Nav />
-
       {/* Title */}
       <section
         style={{

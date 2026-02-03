@@ -1,6 +1,5 @@
 import React, { useEffect } from 'react';
 import { useParams } from 'react-router-dom';
-import Nav from '../components/Nav';
 
 // Article data - can be moved to a separate file later
 const articlesData: Record<string, { title: string; date: string; content: string[] }> = {
@@ -60,8 +59,6 @@ const Article: React.FC = () => {
         lineHeight: '1.5',
       }}
     >
-      <Nav />
-
       {/* Article Header */}
       <header
         style={{
