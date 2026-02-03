@@ -1,4 +1,5 @@
 import React, { useEffect } from 'react';
+import Nav from '../components/Nav';
 
 const Homepage: React.FC = () => {
   useEffect(() => {
@@ -18,64 +19,12 @@ const Homepage: React.FC = () => {
     };
   }, []);
 
-  const navItems = [
-    { label: 'Work', href: '/work' },
-    { label: 'Photography', href: '/photography' },
-    { label: 'Sims 3', href: '/sims-3' },
-    { label: 'Bookmarks', href: '/bookmarks' },
-    { label: 'Writings', href: '/writings' },
-  ];
-
-  const principles = [
+  const articles = [
     {
       number: '01',
-      title: 'Good design has a reason to exist',
-      text: "No more designing for design's sake, every product must have a valid reason to be brought into the world, and we must consider the rationale for each aspect of that product throughout the design process.",
-    },
-    {
-      number: '02',
-      title: 'Good design is inclusive',
-      text: 'A diverse design team produces better outcomes. A wider range of viewpoints is likely to identify more challenges and opportunities not just for improving sustainability, but for meeting the needs of a wider audience.',
-    },
-    {
-      number: '03',
-      title: 'Good design is built on honesty',
-      text: 'Honesty and transparency is key, between manufacturers, designer, brand and consumer. We need to be able to understand the environmental implications of the decisions that we make in order to take responsibility for them.',
-    },
-    {
-      number: '04',
-      title: 'Good design is thorough through to end-of-life',
-      text: 'Design considers both the creation, use and destruction of products and works to minimise the impact of each stage of the life cycle.',
-    },
-    {
-      number: '05',
-      title: 'Good design is designed for appropriate lifespan',
-      text: 'Design should be long-lasting where there is likelihood of it remaining relevant and desirable by the user. In which case avoid trends, design for upgrade or adaptability. Otherwise design for a finite life and ensure that the product does not remain on the planet forever.',
-    },
-    {
-      number: '06',
-      title: 'Good design is intuitive',
-      text: 'Over complicated design features and functionality which confuse the user, or require prior knowledge, prevent the user both using the product and passing it on to someone else.',
-    },
-    {
-      number: '07',
-      title: 'Good design is people and planet-centred',
-      text: 'Whilst we design for users, if we do not put the needs of our planet at the centre of our design process we are effectively putting those same people at risk.',
-    },
-    {
-      number: '08',
-      title: 'Good design encourages positive behaviour change',
-      text: 'The influence of our work should extend beyond its sale, we should endeavour to affect positive behaviour change in our users.',
-    },
-    {
-      number: '09',
-      title: 'Good design is beautiful',
-      text: 'Designs should bring joy to the user both through aesthetic and user experience.',
-    },
-    {
-      number: '10',
-      title: 'Good design is considered down to the last detail',
-      text: 'The level of care and attention to detail in an object is apparent and results in an affinity and appreciation that builds a longer lasting relationship between user and product.',
+      slug: 'yc-design-manifesto',
+      title: 'YC design Manifesto',
+      text: "A reflection on designing YC software with clarity and care — building cohesive, practical systems that make excellence unmistakable across YC's most visible products.",
     },
   ];
 
@@ -88,31 +37,7 @@ const Homepage: React.FC = () => {
         lineHeight: '1.5',
       }}
     >
-      {/* Navigation */}
-      <nav
-        style={{
-          display: 'flex',
-          gap: '32px',
-          padding: '40px',
-          justifyContent: 'center',
-        }}
-      >
-        {navItems.map((item) => (
-          <a
-            key={item.label}
-            href={item.href}
-            className="nav-link"
-            style={{
-              fontSize: '11px',
-              textDecoration: 'none',
-              color: '#0000FE',
-              transition: 'all 0.2s ease',
-            }}
-          >
-            {item.label}
-          </a>
-        ))}
-      </nav>
+      <Nav />
 
       {/* Hero Section */}
       <section
@@ -155,9 +80,10 @@ const Homepage: React.FC = () => {
           padding: '0 40px 80px',
         }}
       >
-        {principles.map((principle) => (
-          <div
-            key={principle.number}
+        {articles.map((article) => (
+          <a
+            key={article.number}
+            href={`/article/${article.slug}`}
             style={{
               display: 'flex',
               gap: '20px',
@@ -167,8 +93,10 @@ const Homepage: React.FC = () => {
               borderRadius: '4px',
               cursor: 'pointer',
               transition: 'all 0.2s ease',
+              textDecoration: 'none',
+              color: 'inherit',
             }}
-            className="principle-item"
+            className="article-item"
           >
             <span
               style={{
@@ -178,18 +106,18 @@ const Homepage: React.FC = () => {
                 flexShrink: 0,
               }}
             >
-              {principle.number}
+              {article.number}
             </span>
             <div>
               <h3
-                className="principle-title"
+                className="article-title"
                 style={{
                   fontSize: '12px',
                   fontWeight: 'bold',
                   marginBottom: '8px',
                 }}
               >
-                {principle.title}
+                {article.title}
               </h3>
               <p
                 style={{
@@ -198,10 +126,10 @@ const Homepage: React.FC = () => {
                   lineHeight: '1.7',
                 }}
               >
-                {principle.text}
+                {article.text}
               </p>
             </div>
-          </div>
+          </a>
         ))}
       </section>
 
@@ -209,21 +137,17 @@ const Homepage: React.FC = () => {
       <footer
         style={{
           display: 'flex',
-          justifyContent: 'space-between',
+          justifyContent: 'center',
           padding: '40px',
           fontSize: '9px',
           opacity: 0.4,
         }}
       >
-        <span>From people to planet</span>
-        <span>10 Design Principles</span>
+        <span>a corner of reverie</span>
       </footer>
 
       <style>{`
-        .principle-item:hover .principle-title {
-          text-decoration: underline;
-        }
-        .nav-link:hover {
+        .article-item:hover .article-title {
           text-decoration: underline;
         }
       `}</style>

@@ -1,4 +1,5 @@
 import React, { useEffect } from 'react';
+import Nav from '../components/Nav';
 
 // Import all photos
 import photo1 from '../photos/01E116EF-F7FE-4811-B7AA-C10B07D18769_1_105_c.jpeg';
@@ -48,14 +49,6 @@ const Photography: React.FC = () => {
     };
   }, []);
 
-  const navItems = [
-    { label: 'Work', href: '/work' },
-    { label: 'Photography', href: '/photography' },
-    { label: 'Sims 3', href: '/sims-3' },
-    { label: 'Bookmarks', href: '/bookmarks' },
-    { label: 'Writings', href: '/writings' },
-  ];
-
   return (
     <div
       style={{
@@ -65,31 +58,7 @@ const Photography: React.FC = () => {
         lineHeight: '1.5',
       }}
     >
-      {/* Navigation */}
-      <nav
-        style={{
-          display: 'flex',
-          gap: '32px',
-          padding: '40px',
-          justifyContent: 'center',
-        }}
-      >
-        {navItems.map((item) => (
-          <a
-            key={item.label}
-            href={item.href}
-            className="nav-link"
-            style={{
-              fontSize: '11px',
-              textDecoration: 'none',
-              color: '#0000FE',
-              transition: 'all 0.2s ease',
-            }}
-          >
-            {item.label}
-          </a>
-        ))}
-      </nav>
+      <Nav />
 
       {/* Title */}
       <section
@@ -139,12 +108,6 @@ const Photography: React.FC = () => {
           </div>
         ))}
       </section>
-
-      <style>{`
-        .nav-link:hover {
-          text-decoration: underline;
-        }
-      `}</style>
     </div>
   );
 };
