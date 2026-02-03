@@ -50,7 +50,7 @@ const Homepage: React.FC = () => {
       style={{
         minHeight: '100vh',
         fontFamily: "'Departure Mono', monospace",
-        fontSize: '12px',
+        fontSize: '13px',
         lineHeight: '1.5',
       }}
     >
@@ -99,9 +99,9 @@ const Homepage: React.FC = () => {
         {/* About Section */}
         <h2
           style={{
-            fontSize: '12px',
+            fontSize: '13px',
             fontWeight: 'bold',
-            marginBottom: '12px',
+            marginBottom: '13px',
             opacity: 0.5,
             textTransform: 'uppercase',
             letterSpacing: '0.05em',
@@ -119,7 +119,7 @@ const Homepage: React.FC = () => {
         >
           <span
             style={{
-              fontSize: '12px',
+              fontSize: '13px',
               opacity: 0.5,
               width: '24px',
               flexShrink: 0,
@@ -129,7 +129,7 @@ const Homepage: React.FC = () => {
           </span>
           <p
             style={{
-              fontSize: '12px',
+              fontSize: '13px',
               lineHeight: '1.7',
               opacity: 0.85,
             }}
@@ -151,7 +151,7 @@ const Homepage: React.FC = () => {
         {/* Writing Section */}
         <h2
           style={{
-            fontSize: '12px',
+            fontSize: '13px',
             fontWeight: 'bold',
             marginBottom: '16px',
             opacity: 0.5,
@@ -180,7 +180,7 @@ const Homepage: React.FC = () => {
           >
             <span
               style={{
-                fontSize: '12px',
+                fontSize: '13px',
                 opacity: 0.5,
                 width: '24px',
                 flexShrink: 0,
@@ -192,7 +192,7 @@ const Homepage: React.FC = () => {
               <h3
                 className="article-title"
                 style={{
-                  fontSize: '12px',
+                  fontSize: '13px',
                   fontWeight: 'bold',
                   marginBottom: '4px',
                 }}
@@ -201,7 +201,7 @@ const Homepage: React.FC = () => {
               </h3>
               <p
                 style={{
-                  fontSize: '12px',
+                  fontSize: '13px',
                   opacity: 0.75,
                   lineHeight: '1.6',
                 }}
@@ -225,7 +225,7 @@ const Homepage: React.FC = () => {
         {/* Projects Section */}
         <h2
           style={{
-            fontSize: '12px',
+            fontSize: '13px',
             fontWeight: 'bold',
             marginBottom: '16px',
             opacity: 0.5,
@@ -251,7 +251,7 @@ const Homepage: React.FC = () => {
           >
             <span
               style={{
-                fontSize: '12px',
+                fontSize: '13px',
                 opacity: 0.5,
                 width: '24px',
                 flexShrink: 0,
@@ -263,7 +263,7 @@ const Homepage: React.FC = () => {
               <h3
                 className="project-title"
                 style={{
-                  fontSize: '12px',
+                  fontSize: '13px',
                   fontWeight: 'bold',
                   marginBottom: '4px',
                   display: 'flex',
@@ -278,7 +278,7 @@ const Homepage: React.FC = () => {
               </h3>
               <p
                 style={{
-                  fontSize: '12px',
+                  fontSize: '13px',
                   opacity: 0.75,
                   lineHeight: '1.6',
                 }}
@@ -302,7 +302,7 @@ const Homepage: React.FC = () => {
         {/* Photography Section */}
         <h2
           style={{
-            fontSize: '12px',
+            fontSize: '13px',
             fontWeight: 'bold',
             marginBottom: '16px',
             opacity: 0.5,
@@ -327,12 +327,12 @@ const Homepage: React.FC = () => {
           }}
           className="link-item"
         >
-          <span style={{ fontSize: '12px', opacity: 0.5, width: '24px', flexShrink: 0 }}>→</span>
+          <span style={{ fontSize: '13px', opacity: 0.5, width: '24px', flexShrink: 0 }}>→</span>
           <div>
-            <h3 className="link-title" style={{ fontSize: '12px', fontWeight: 'bold', marginBottom: '4px' }}>
+            <h3 className="link-title" style={{ fontSize: '13px', fontWeight: 'bold', marginBottom: '4px' }}>
               Photo Gallery
             </h3>
-            <p style={{ fontSize: '12px', opacity: 0.75, lineHeight: '1.6' }}>
+            <p style={{ fontSize: '13px', opacity: 0.75, lineHeight: '1.6' }}>
               A collection of photographs.
             </p>
           </div>
@@ -351,7 +351,7 @@ const Homepage: React.FC = () => {
         {/* Bookmarks Section */}
         <h2
           style={{
-            fontSize: '12px',
+            fontSize: '13px',
             fontWeight: 'bold',
             marginBottom: '16px',
             opacity: 0.5,
@@ -376,12 +376,12 @@ const Homepage: React.FC = () => {
           }}
           className="link-item"
         >
-          <span style={{ fontSize: '12px', opacity: 0.5, width: '24px', flexShrink: 0 }}>→</span>
+          <span style={{ fontSize: '13px', opacity: 0.5, width: '24px', flexShrink: 0 }}>→</span>
           <div>
-            <h3 className="link-title" style={{ fontSize: '12px', fontWeight: 'bold', marginBottom: '4px' }}>
+            <h3 className="link-title" style={{ fontSize: '13px', fontWeight: 'bold', marginBottom: '4px' }}>
               Saved Links
             </h3>
-            <p style={{ fontSize: '12px', opacity: 0.75, lineHeight: '1.6' }}>
+            <p style={{ fontSize: '13px', opacity: 0.75, lineHeight: '1.6' }}>
               Interesting things from around the web.
             </p>
           </div>
@@ -400,7 +400,7 @@ const Homepage: React.FC = () => {
         {/* Sims 3 Section */}
         <h2
           style={{
-            fontSize: '12px',
+            fontSize: '13px',
             fontWeight: 'bold',
             marginBottom: '16px',
             opacity: 0.5,
@@ -425,16 +425,94 @@ const Homepage: React.FC = () => {
           }}
           className="link-item"
         >
-          <span style={{ fontSize: '12px', opacity: 0.5, width: '24px', flexShrink: 0 }}>→</span>
+          <span style={{ fontSize: '13px', opacity: 0.5, width: '24px', flexShrink: 0 }}>→</span>
           <div>
-            <h3 className="link-title" style={{ fontSize: '12px', fontWeight: 'bold', marginBottom: '4px' }}>
+            <h3 className="link-title" style={{ fontSize: '13px', fontWeight: 'bold', marginBottom: '4px' }}>
               Sims 3 Adventures
             </h3>
-            <p style={{ fontSize: '12px', opacity: 0.75, lineHeight: '1.6' }}>
+            <p style={{ fontSize: '13px', opacity: 0.75, lineHeight: '1.6' }}>
               Stories and screenshots from The Sims 3.
             </p>
           </div>
         </a>
+
+        {/* Horizontal Divider */}
+        <hr
+          style={{
+            border: 'none',
+            borderTop: '1px solid #0000FE',
+            opacity: 0.2,
+            margin: '20px 0',
+          }}
+        />
+
+        {/* FAQ Section */}
+        <h2
+          style={{
+            fontSize: '13px',
+            fontWeight: 'bold',
+            marginBottom: '16px',
+            opacity: 0.5,
+            textTransform: 'uppercase',
+            letterSpacing: '0.05em',
+          }}
+        >
+          FAQ
+        </h2>
+        <div
+          style={{
+            display: 'flex',
+            gap: '20px',
+            padding: '8px',
+            margin: '0 -8px 12px -8px',
+          }}
+        >
+          <span style={{ fontSize: '13px', opacity: 0.5, width: '24px', flexShrink: 0 }}>Q</span>
+          <div>
+            <h3 style={{ fontSize: '13px', fontWeight: 'bold', marginBottom: '4px' }}>
+              How did you start working at YC?
+            </h3>
+            <p style={{ fontSize: '13px', opacity: 0.75, lineHeight: '1.6' }}>
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+            </p>
+          </div>
+        </div>
+        <div
+          style={{
+            display: 'flex',
+            gap: '20px',
+            padding: '8px',
+            margin: '0 -8px 12px -8px',
+          }}
+        >
+          <span style={{ fontSize: '13px', opacity: 0.5, width: '24px', flexShrink: 0 }}>Q</span>
+          <div>
+            <h3 style={{ fontSize: '13px', fontWeight: 'bold', marginBottom: '4px' }}>
+              What were you doing before YC?
+            </h3>
+            <p style={{ fontSize: '13px', opacity: 0.75, lineHeight: '1.6' }}>
+              Before YC, I was in school, but spent most of my time working on a virtual reality game with ridiculously talented friends — Max and Imad.
+            </p>
+          </div>
+        </div>
+        <div
+          style={{
+            display: 'flex',
+            gap: '20px',
+            padding: '8px',
+            margin: '0 -8px 12px -8px',
+          }}
+        >
+          <span style={{ fontSize: '13px', opacity: 0.5, width: '24px', flexShrink: 0 }}>Q</span>
+          <div>
+            <h3 style={{ fontSize: '13px', fontWeight: 'bold', marginBottom: '4px' }}>
+              What tools do you use?
+            </h3>
+            <p style={{ fontSize: '13px', opacity: 0.75, lineHeight: '1.6' }}>
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+            </p>
+          </div>
+        </div>
       </section>
 
       {/* Footer */}
