@@ -3,6 +3,12 @@ import './Homepage.scss';
 import BackButton from '../components/BackButton';
 import { SimplexNoise, Dithering, Warp, DotOrbit, GrainGradient, PerlinNoise } from '@paper-design/shaders-react';
 
+const colorPalettes = [
+  { name: 'Buttermilk', colors: ["#FFF1B5", "#C1DBE8", "#43302E", "#FFF1B5"] },
+  { name: 'Lavender', colors: ["#D3BECB", "#597394", "#C03C29", "#D3BECB"] },
+  { name: 'Alabaster', colors: ["#EBEBDF", "#A8C2E0", "#EA631B", "#EBEBDF"] },
+];
+
 const PaperEffects: React.FC = () => {
   const [noiseScale, setNoiseScale] = useState(0.29);
   const [ditherSize, setDitherSize] = useState(2);
@@ -10,6 +16,9 @@ const PaperEffects: React.FC = () => {
   const [dotSpreading, setDotSpreading] = useState(1);
   const [grainNoise, setGrainNoise] = useState(0.25);
   const [perlinSoftness, setPerlinSoftness] = useState(0.1);
+  const [selectedPalette, setSelectedPalette] = useState(0);
+
+  const currentColors = colorPalettes[selectedPalette].colors;
 
   useEffect(() => {
     // Load Geist Mono font
@@ -43,12 +52,52 @@ const PaperEffects: React.FC = () => {
 
       {/* Title */}
       <p style={{ marginBottom: '12px', textAlign: 'center' }}>Paper Effects</p>
-      <p className="text-secondary" style={{ marginBottom: '48px', textAlign: 'center' }}>
+      <p className="text-secondary" style={{ marginBottom: '24px', textAlign: 'center' }}>
         Me messing around with the new{' '}
         <a href="https://shaders.paper.design/" target="_blank" rel="noopener noreferrer" className="text-link">
           Paper Effects
         </a>
       </p>
+
+      {/* Palette Selector */}
+      <div style={{ display: 'flex', justifyContent: 'center', gap: '12px', marginBottom: '48px' }}>
+        {colorPalettes.map((palette, index) => (
+          <button
+            key={index}
+            onClick={() => setSelectedPalette(index)}
+            style={{
+              padding: '8px 16px',
+              fontSize: '12px',
+              fontFamily: 'inherit',
+              border: selectedPalette === index ? '1px solid rgb(23, 23, 23)' : '1px solid rgba(23, 23, 23, 0.2)',
+              borderRadius: '4px',
+              background: selectedPalette === index ? 'rgb(23, 23, 23)' : 'transparent',
+              color: selectedPalette === index ? '#F2F0EE' : 'rgb(23, 23, 23)',
+              cursor: 'pointer',
+              transition: 'all 0.15s ease',
+              display: 'flex',
+              alignItems: 'center',
+              gap: '8px',
+            }}
+          >
+            <span style={{ display: 'flex', gap: '4px' }}>
+              {palette.colors.slice(0, 3).map((color, colorIndex) => (
+                <span
+                  key={colorIndex}
+                  style={{
+                    width: '8px',
+                    height: '8px',
+                    borderRadius: '50%',
+                    backgroundColor: color,
+                    border: '1px solid rgba(0, 0, 0, 0.1)',
+                  }}
+                />
+              ))}
+            </span>
+            {palette.name}
+          </button>
+        ))}
+      </div>
 
       {/* 3x2 Grid */}
       <div className="responsive-grid">
@@ -58,7 +107,7 @@ const PaperEffects: React.FC = () => {
             <SimplexNoise
               width="100%"
               height="100%"
-              colors={["#74342B", "#EDDBC2", "#391212", "#8FA4D1"]}
+              colors={currentColors}
               stepsPerColor={2}
               softness={0}
               speed={0.5}
@@ -98,8 +147,8 @@ const PaperEffects: React.FC = () => {
             <Dithering
               width="100%"
               height="100%"
-              colorBack="#391212"
-              colorFront="#EDDBC2"
+              colorBack={currentColors[2]}
+              colorFront={currentColors[1]}
               shape="sphere"
               type="4x4"
               size={ditherSize}
@@ -140,7 +189,7 @@ const PaperEffects: React.FC = () => {
             <Warp
               width="100%"
               height="100%"
-              colors={["#74342B", "#EDDBC2", "#391212", "#8FA4D1"]}
+              colors={currentColors}
               proportion={0.45}
               softness={1}
               distortion={0.25}
@@ -184,7 +233,7 @@ const PaperEffects: React.FC = () => {
             <DotOrbit
               width="100%"
               height="100%"
-              colors={["#74342B", "#EDDBC2", "#391212", "#8FA4D1"]}
+              colors={currentColors}
               colorBack="#391212"
               stepsPerColor={4}
               size={1}
@@ -227,8 +276,8 @@ const PaperEffects: React.FC = () => {
             <GrainGradient
               width="100%"
               height="100%"
-              colors={["#74342B", "#EDDBC2", "#391212", "#8FA4D1"]}
-              colorBack="#391212"
+              colors={currentColors}
+              colorBack={currentColors[2]}
               softness={0.5}
               intensity={0.5}
               noise={grainNoise}
