@@ -5,7 +5,7 @@ import { SimplexNoise, Dithering, Warp, DotOrbit, GrainGradient, PerlinNoise } f
 
 const colorPalettes = [
   { name: 'Buttermilk', colors: ["#FFF1B5", "#C1DBE8", "#43302E", "#FFF1B5"] },
-  { name: 'Lavender', colors: ["#D3BECB", "#597394", "#C03C29", "#D3BECB"] },
+  { name: 'Lavender', colors: ["#C03C29", "#597394", "#D3BECB", "#C03C29"] },
   { name: 'Alabaster', colors: ["#EBEBDF", "#A8C2E0", "#EA631B", "#EBEBDF"] },
 ];
 
