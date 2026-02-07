@@ -5,6 +5,7 @@ import { HalftoneCmyk } from '@paper-design/shaders-react';
 const Homepage: React.FC = () => {
   const [emailCopied, setEmailCopied] = useState(false);
   const [dotSize, setDotSize] = useState(0.28);
+  const [ycHover, setYcHover] = useState(false);
 
   const handleCopyEmail = () => {
     navigator.clipboard.writeText('e.bouffard252@gmail.com');
@@ -59,9 +60,37 @@ const Homepage: React.FC = () => {
       {/* Bio */}
       <p className="text-secondary mb-xl">
         Designer turned design engineer at{' '}
-        <a href="https://www.ycombinator.com/" target="_blank" rel="noopener noreferrer" className="text-link">
-          Y Combinator
-        </a>
+        <span style={{ position: 'relative', display: 'inline' }}>
+          <a 
+            href="https://www.ycombinator.com/" 
+            target="_blank" 
+            rel="noopener noreferrer" 
+            className="text-link"
+            onMouseEnter={() => setYcHover(true)}
+            onMouseLeave={() => setYcHover(false)}
+          >
+            Y Combinator
+          </a>
+          {ycHover && (
+            <svg 
+              width="16" 
+              height="16" 
+              viewBox="0 0 48 48" 
+              fill="none" 
+              xmlns="http://www.w3.org/2000/svg"
+              style={{ 
+                position: 'absolute', 
+                top: '-20px', 
+                left: '50%', 
+                transform: 'translateX(-50%)',
+                pointerEvents: 'none',
+              }}
+            >
+              <path d="M47.9985 47.9994H0V8.61853e-07H47.9985V47.9994Z" fill="#FF6600"/>
+              <path d="M13.9012 11.7843H17.6595L22.4961 21.5325C23.203 22.9836 23.7984 24.3976 23.7984 24.3976C23.7984 24.3976 24.4313 23.021 25.175 21.5325L30.0868 11.7843H33.5843L25.2865 27.3746V37.309H22.1244V27.1884L13.9012 11.7843Z" fill="white"/>
+            </svg>
+          )}
+        </span>
         , where I most recently redesigned and built the new YC homepage.
         {/* Before YC, I was in school, but spent most of my time working on a virtual reality game with ridiculously talented friends —{' '}
         <a href="https://www.linkedin.com/in/max-brodeur-urbas" target="_blank" rel="noopener noreferrer" className="text-link">
