@@ -12,10 +12,6 @@ const PaperEffects: React.FC = () => {
   const [perlinSoftness, setPerlinSoftness] = useState(0.1);
 
   useEffect(() => {
-    document.body.style.backgroundColor = '#F2F0EE';
-    document.body.style.color = 'rgb(23, 23, 23)';
-    document.body.style.margin = '0';
-    
     // Load Geist Mono font
     const link = document.createElement('link');
     link.href = 'https://fonts.googleapis.com/css2?family=Geist+Mono:wght@300;400&display=swap';
@@ -23,8 +19,6 @@ const PaperEffects: React.FC = () => {
     document.head.appendChild(link);
     
     return () => {
-      document.body.style.backgroundColor = '';
-      document.body.style.color = '';
       document.head.removeChild(link);
     };
   }, []);

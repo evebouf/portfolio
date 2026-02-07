@@ -1,1 +1,8 @@
 @import "tailwindcss";
+
+/* Global background color - prevents white flash on overscroll */
+html, body {
+  background-color: #F2F0EE;
+  color: rgb(23, 23, 23);
+  margin: 0;
+}
