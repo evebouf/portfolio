@@ -32,8 +32,8 @@ const Homepage: React.FC = () => {
       comingSoon: true,
     },
     {
-      title: 'YC Application',
-      description: 'Application flow for startup founders.',
+      title: 'YC Application Portal',
+      description: 'How 100,000+ startups apply to YC every year.',
       link: null,
       comingSoon: true,
     },
@@ -45,7 +45,7 @@ const Homepage: React.FC = () => {
     },
     {
       title: 'Startup School 2026',
-      description: "Creative for YC's flagship yearly event.",
+      description: "Creative for YC's 6,000-person flagship event.",
       link: null,
       comingSoon: true,
     },
