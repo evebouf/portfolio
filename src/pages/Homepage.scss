@@ -49,11 +49,12 @@ $link-underline-hover: rgba(0, 0, 0, 0.8);
 // Project item
 .project-item {
   margin-bottom: 16px;
+}
 
-  &:hover .project-title > span:first-child {
-    text-decoration: underline;
-    text-underline-offset: 4px;
-  }
+// Hover underline only for clickable project links
+.project-link:hover .project-title > span:first-child {
+  text-decoration: underline;
+  text-underline-offset: 4px;
 }
 
 // Project link (for clickable items)

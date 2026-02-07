@@ -43,6 +43,12 @@ const Homepage: React.FC = () => {
       link: null,
       comingSoon: true,
     },
+    {
+      title: 'Startup School 2026',
+      description: "Creative for YC's flagship yearly event.",
+      link: null,
+      comingSoon: true,
+    },
   ];
 
   return (
