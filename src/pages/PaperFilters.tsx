@@ -51,13 +51,7 @@ const PaperFilters: React.FC = () => {
       </p>
 
       {/* 3x2 Grid */}
-      <div
-        style={{
-          display: 'grid',
-          gridTemplateColumns: 'repeat(3, minmax(0, 1fr))',
-          gap: '24px',
-        }}
-      >
+      <div className="responsive-grid">
         {/* Filter 1: Paper Texture */}
         <div style={{ minWidth: 0, overflow: 'hidden' }}>
           <div style={{ position: 'relative', aspectRatio: '1' }}>

@@ -133,3 +133,14 @@ $link-underline-hover: rgba(0, 0, 0, 0.8);
     text-decoration-color: $link-underline-hover;
   }
 }
+
+// Responsive grid for effects/filters pages
+.responsive-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 24px;
+
+  @media (max-width: 768px) {
+    grid-template-columns: 1fr;
+  }
+}
