@@ -44,7 +44,7 @@ const PaperFilters: React.FC = () => {
       {/* Title */}
       <p style={{ marginBottom: '12px', textAlign: 'center' }}>Paper Filters</p>
       <p className="text-secondary" style={{ marginBottom: '48px', textAlign: 'center' }}>
-        Me messing around with the new{' '}
+        Messing around with the new{' '}
         <a href="https://shaders.paper.design/" target="_blank" rel="noopener noreferrer" className="text-link">
           Paper Filters
         </a>

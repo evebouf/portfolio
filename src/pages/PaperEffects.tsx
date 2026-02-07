@@ -53,20 +53,20 @@ const PaperEffects: React.FC = () => {
       {/* Title */}
       <p style={{ marginBottom: '12px', textAlign: 'center' }}>Paper Effects</p>
       <p className="text-secondary" style={{ marginBottom: '24px', textAlign: 'center' }}>
-        Me messing around with the new{' '}
+        Messing around with the new{' '}
         <a href="https://shaders.paper.design/" target="_blank" rel="noopener noreferrer" className="text-link">
           Paper Effects
         </a>
       </p>
 
       {/* Palette Selector */}
-      <div style={{ display: 'flex', justifyContent: 'center', gap: '12px', marginBottom: '48px' }}>
+      <div style={{ display: 'flex', justifyContent: 'center', gap: '8px', marginBottom: '48px', flexWrap: 'wrap' }}>
         {colorPalettes.map((palette, index) => (
           <button
             key={index}
             onClick={() => setSelectedPalette(index)}
             style={{
-              padding: '8px 16px',
+              padding: '8px 12px',
               fontSize: '12px',
               fontFamily: 'inherit',
               border: selectedPalette === index ? '1px solid rgb(23, 23, 23)' : '1px solid rgba(23, 23, 23, 0.2)',
@@ -77,10 +77,10 @@ const PaperEffects: React.FC = () => {
               transition: 'all 0.15s ease',
               display: 'flex',
               alignItems: 'center',
-              gap: '8px',
+              gap: '6px',
             }}
           >
-            <span style={{ display: 'flex', gap: '4px' }}>
+            <span style={{ display: 'flex', gap: '3px' }}>
               {palette.colors.slice(0, 3).map((color, colorIndex) => (
                 <span
                   key={colorIndex}
