@@ -112,7 +112,7 @@ const Homepage: React.FC = () => {
       <div className="mt-section">
         <p className="section-header">Contact</p>
         <p className="text-secondary mb-md">
-          If something here resonates, please reach out! I'd love to connect :)
+          Please reach out! I'd love to connect :)
         </p>
         <div className="contact-links text-secondary">
           <span onClick={handleCopyEmail} className="text-link">
