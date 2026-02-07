@@ -28,14 +28,17 @@ const Homepage: React.FC = () => {
     {
       title: 'YC Website',
       description: 'Redesigned and built the new homepage.',
+      link: '/projects/yc-website',
     },
     {
       title: 'YC Application',
       description: 'Application flow for startup founders.',
+      link: null,
     },
     {
       title: 'YC Application Review',
       description: 'Internal tool for reviewing applications.',
+      link: null,
     },
   ];
 
@@ -123,10 +126,17 @@ const Homepage: React.FC = () => {
       {/* Projects Section */}
       <p className="section-header">01 Projects</p>
       {projects.map((project, index) => (
-        <div key={index} className="project-item">
-          <p className="project-title text-secondary">{project.title}</p>
-          <p className="text-muted no-margin">{project.description}</p>
-        </div>
+        project.link ? (
+          <a key={index} href={project.link} className="project-item project-link">
+            <p className="project-title text-secondary">{project.title}</p>
+            <p className="text-muted no-margin">{project.description}</p>
+          </a>
+        ) : (
+          <div key={index} className="project-item">
+            <p className="project-title text-secondary">{project.title}</p>
+            <p className="text-muted no-margin">{project.description}</p>
+          </div>
+        )
       ))}
 
       {/* Photography Section */}
