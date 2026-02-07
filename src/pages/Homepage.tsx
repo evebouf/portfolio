@@ -1,8 +1,10 @@
 import React, { useEffect, useState } from 'react';
 import './Homepage.scss';
+import { HalftoneCmyk } from '@paper-design/shaders-react';
 
 const Homepage: React.FC = () => {
   const [emailCopied, setEmailCopied] = useState(false);
+  const [dotSize, setDotSize] = useState(0.88);
 
   const handleCopyEmail = () => {
     navigator.clipboard.writeText('e.bouffard252@gmail.com');
@@ -65,6 +67,50 @@ const Homepage: React.FC = () => {
         </a>
         . */}
       </p>
+
+      {/* Hero Image with Halftone Effect */}
+      <div style={{ marginBottom: '48px', width: '100%' }}>
+        <HalftoneCmyk
+          width="100%"
+          height={300}
+          image="/pictures/the-old-fort-at-antibes (1).jpg"
+          colorBack="#eeefd7"
+          colorC="#00b3ff"
+          colorM="#fc4f4f"
+          colorY="#ffd900"
+          colorK="#231f20"
+          size={dotSize}
+          gridNoise={0.5}
+          type="ink"
+          softness={0}
+          contrast={1.15}
+          floodC={0.15}
+          floodM={0}
+          floodY={0}
+          floodK={0}
+          gainC={1}
+          gainM={0.44}
+          gainY={0.72}
+          gainK={0}
+          grainMixer={0.05}
+          grainOverlay={0.25}
+          grainSize={0.52}
+          fit="cover"
+        />
+        <div style={{ marginTop: '12px', display: 'flex', alignItems: 'center', gap: '12px' }}>
+          <span className="text-muted" style={{ fontSize: '12px', whiteSpace: 'nowrap', flexShrink: 0 }}>dot size</span>
+          <input
+            type="range"
+            min="0.1"
+            max="1"
+            step="0.01"
+            value={dotSize}
+            onChange={(e) => setDotSize(parseFloat(e.target.value))}
+            className="shader-slider"
+            style={{ flex: 1 }}
+          />
+        </div>
+      </div>
 
       {/* Projects Section */}
       <p className="section-header">01 Projects</p>
