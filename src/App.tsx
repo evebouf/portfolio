@@ -7,7 +7,7 @@ import MonoBlueprintPage from './pages/MonoBlueprintPage';
 import Homepage from './pages/Homepage';
 import Photography from './pages/Photography';
 import Article from './pages/Article';
-import PaperShaders from './pages/PaperShaders';
+import PaperEffects from './pages/PaperEffects';
 
 const App: React.FC = () => {
   return (
@@ -19,7 +19,7 @@ const App: React.FC = () => {
             <Route path="/mono-blueprint" element={<MonoBlueprintPage />} />
             <Route path="/homepage" element={<Homepage />} />
             <Route path="/photography" element={<Photography />} />
-            <Route path="/explorations/paper-shaders" element={<PaperShaders />} />
+            <Route path="/explorations/paper-effects" element={<PaperEffects />} />
             <Route path="/article/:slug" element={<Article />} />
             <Route path="*" element={<MonoBlueprintPage />} />
           </Routes>

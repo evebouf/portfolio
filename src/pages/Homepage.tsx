@@ -147,9 +147,9 @@ const Homepage: React.FC = () => {
       {/* Explorations Section */}
       <div className="mt-section">
         <p className="section-header">03 Explorations</p>
-        <a href="/explorations/paper-shaders" className="project-item project-link">
-          <p className="project-title text-secondary">Paper Shaders</p>
-          <p className="text-muted no-margin">Interactive shader experiments.</p>
+        <a href="/explorations/paper-effects" className="project-item project-link">
+          <p className="project-title text-secondary">Paper Effects</p>
+          <p className="text-muted no-margin">Interactive effect experiments.</p>
         </a>
       </div>
 

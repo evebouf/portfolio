@@ -3,7 +3,7 @@ import './Homepage.scss';
 import BackButton from '../components/BackButton';
 import { SimplexNoise, Dithering, Warp, DotOrbit, GrainGradient, PerlinNoise } from '@paper-design/shaders-react';
 
-const PaperShaders: React.FC = () => {
+const PaperEffects: React.FC = () => {
   const [noiseScale, setNoiseScale] = useState(0.29);
   const [ditherSize, setDitherSize] = useState(2);
   const [warpSwirl, setWarpSwirl] = useState(0.8);
@@ -48,11 +48,11 @@ const PaperShaders: React.FC = () => {
       </div>
 
       {/* Title */}
-      <p style={{ marginBottom: '12px', textAlign: 'center' }}>Paper Shaders</p>
+      <p style={{ marginBottom: '12px', textAlign: 'center' }}>Paper Effects</p>
       <p className="text-secondary" style={{ marginBottom: '48px', textAlign: 'center' }}>
         Me messing around with the new{' '}
         <a href="https://shaders.paper.design/" target="_blank" rel="noopener noreferrer" className="text-link">
-          Paper Shaders
+          Paper Effects
         </a>
       </p>
 
@@ -324,4 +324,4 @@ const PaperShaders: React.FC = () => {
   );
 };
 
-export default PaperShaders;
+export default PaperEffects;
