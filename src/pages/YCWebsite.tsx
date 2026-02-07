@@ -37,20 +37,18 @@ const YCWebsite: React.FC = () => {
       <p style={{ marginBottom: '8px', textAlign: 'center' }}>YC Website</p>
       <p className="text-secondary" style={{ marginBottom: '32px', textAlign: 'center' }}>Redesigned and built the new homepage.</p>
 
-      {/* Hero Placeholder */}
-      <div
+      {/* Hero Video */}
+      <video
+        src="/pictures/yc-website-launch-video.mp4"
+        autoPlay
+        loop
+        muted
+        playsInline
         style={{
           width: '100%',
-          height: '400px',
-          backgroundColor: 'rgba(23, 23, 23, 0.08)',
           marginBottom: '48px',
-          display: 'flex',
-          alignItems: 'center',
-          justifyContent: 'center',
         }}
-      >
-        <span className="text-muted" style={{ fontSize: '12px' }}>Image placeholder</span>
-      </div>
+      />
 
       {/* Content */}
       <div className="text-secondary">
