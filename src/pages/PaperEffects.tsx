@@ -31,7 +31,7 @@ const PaperEffects: React.FC = () => {
         fontSize: '14px',
         fontWeight: 400,
         lineHeight: '20px',
-        padding: '80px 40px',
+        padding: '180px 40px 80px',
         maxWidth: '1200px',
         margin: '0 auto',
       }}
