@@ -151,6 +151,10 @@ const Homepage: React.FC = () => {
           <p className="project-title text-secondary">Paper Effects</p>
           <p className="text-muted no-margin">Interactive effect experiments.</p>
         </a>
+        <a href="/explorations/paper-filters" className="project-item project-link">
+          <p className="project-title text-secondary">Paper Filters</p>
+          <p className="text-muted no-margin">Interactive filter experiments.</p>
+        </a>
       </div>
 
       {/* Writings Section */}
