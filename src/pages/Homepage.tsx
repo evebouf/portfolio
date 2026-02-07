@@ -17,7 +17,7 @@ const Homepage: React.FC = () => {
     
     // Load Geist Mono font
     const link = document.createElement('link');
-    link.href = 'https://fonts.googleapis.com/css2?family=Geist+Mono:wght@400&display=swap';
+    link.href = 'https://fonts.googleapis.com/css2?family=Geist+Mono:wght@300;400&display=swap';
     link.rel = 'stylesheet';
     document.head.appendChild(link);
     
@@ -46,15 +46,16 @@ const Homepage: React.FC = () => {
   return (
     <div className="homepage">
       {/* Name */}
-      <p className="name">Eve Bouffard</p>
+      <p className="mb-lg">Eve Bouffard</p>
 
       {/* Bio */}
-      <p className="bio">
+      <p className="text-secondary mb-xl">
         Designer turned design engineer at{' '}
         <a href="https://www.ycombinator.com/" target="_blank" rel="noopener noreferrer" className="text-link">
           Y Combinator
         </a>
-        , where I most recently redesigned and built the new YC homepage. Before YC, I was in school, but spent most of my time working on a virtual reality game with ridiculously talented friends —{' '}
+        , where I most recently redesigned and built the new YC homepage.
+        {/* Before YC, I was in school, but spent most of my time working on a virtual reality game with ridiculously talented friends —{' '}
         <a href="https://www.linkedin.com/in/max-brodeur-urbas" target="_blank" rel="noopener noreferrer" className="text-link">
           Max
         </a>
@@ -62,50 +63,59 @@ const Homepage: React.FC = () => {
         <a href="https://www.linkedin.com/in/imad-dodin/" target="_blank" rel="noopener noreferrer" className="text-link">
           Imad
         </a>
-        .
+        . */}
       </p>
 
       {/* Projects Section */}
       <p className="section-header">01 Projects</p>
       {projects.map((project, index) => (
         <div key={index} className="project-item">
-          <p className="project-title">{project.title}</p>
-          <p className="project-description">{project.description}</p>
+          <p className="project-title text-secondary">{project.title}</p>
+          <p className="text-muted no-margin">{project.description}</p>
         </div>
       ))}
 
       {/* Photography Section */}
-      <div className="section">
+      <div className="mt-section">
         <p className="section-header">02 Photography</p>
         <a href="/photography" className="project-item project-link">
-          <p className="project-title">Photo Gallery</p>
-          <p className="project-description">A collection of photographs.</p>
+          <p className="project-title text-secondary">Photo Gallery</p>
+          <p className="text-muted no-margin">A collection of photographs.</p>
         </a>
       </div>
 
       {/* Explorations Section */}
-      <div className="section">
+      <div className="mt-section">
         <p className="section-header">03 Explorations</p>
         <div className="project-item">
-          <p className="project-title">Lorem ipsum</p>
-          <p className="project-description">Description placeholder.</p>
+          <p className="project-title text-secondary">Lorem ipsum</p>
+          <p className="text-muted no-margin">Description placeholder.</p>
         </div>
       </div>
 
       {/* Writings Section */}
-      <div className="section">
+      <div className="mt-section">
         <p className="section-header">04 Writings</p>
-        <p className="coming-soon">coming soon</p>
+        <p className="text-muted text-italic">coming soon</p>
+      </div>
+
+      {/* Bookmarks Section */}
+      <div className="mt-section">
+        <p className="section-header">05 Bookmarks</p>
+        <div className="project-item">
+          <p className="project-title text-secondary">Sites and pages that inspire me</p>
+          <p className="text-muted text-italic">coming soon</p>
+        </div>
       </div>
 
       {/* Contact Section */}
-      <div className="section">
-        <p className="section-header--full">Contact</p>
-        <p className="contact-text">
+      <div className="mt-section">
+        <p className="section-header">Contact</p>
+        <p className="text-secondary mb-md">
           If something here resonates, please reach out! I'd love to connect :)
         </p>
-        <div className="contact-links">
-          <span onClick={handleCopyEmail} className="text-link email-btn">
+        <div className="contact-links text-secondary">
+          <span onClick={handleCopyEmail} className="text-link">
             {emailCopied ? 'Copied!' : 'Email'}
           </span>
           <a href="https://x.com/eve_bouff" target="_blank" rel="noopener noreferrer" className="text-link">X</a>

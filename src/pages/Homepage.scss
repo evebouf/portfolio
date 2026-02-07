@@ -17,32 +17,29 @@ $link-underline-hover: rgba(0, 0, 0, 0.8);
   margin: 0 auto;
 }
 
-// Name
-.name {
-  margin-bottom: 24px;
-}
-
-// Bio
-.bio {
-  margin-bottom: 32px;
+// Text opacity utilities
+.text-secondary {
   opacity: 0.7;
+  font-weight: 300;
 }
 
-// Section
-.section {
-  margin-top: 48px;
+.text-muted {
+  opacity: 0.5;
 }
+
+.text-italic {
+  font-style: italic;
+}
+
+// Spacing utilities
+.mb-sm { margin-bottom: 2px; }
+.mb-md { margin-bottom: 16px; }
+.mb-lg { margin-bottom: 24px; }
+.mb-xl { margin-bottom: 32px; }
+.mt-section { margin-top: 48px; }
 
 // Section header
 .section-header {
-  margin-bottom: 20px;
-  opacity: 0.5;
-  padding-bottom: 4px;
-  border-bottom: 1px solid $border-color;
-}
-
-// Section header without opacity (for Contact)
-.section-header--full {
   margin-bottom: 20px;
   padding-bottom: 4px;
   border-bottom: 1px solid $border-color;
@@ -67,25 +64,11 @@ $link-underline-hover: rgba(0, 0, 0, 0.8);
 // Project title
 .project-title {
   margin-bottom: 2px;
-  opacity: 0.7;
 }
 
-// Project description
-.project-description {
-  opacity: 0.5;
+// No margin
+.no-margin {
   margin: 0;
-}
-
-// Coming soon text
-.coming-soon {
-  opacity: 0.5;
-  font-style: italic;
-}
-
-// Contact text
-.contact-text {
-  opacity: 0.7;
-  margin-bottom: 16px;
 }
 
 // Contact links container
@@ -101,13 +84,9 @@ $link-underline-hover: rgba(0, 0, 0, 0.8);
   text-decoration-color: $link-underline;
   text-underline-offset: 2px;
   transition: text-decoration-color 0.2s ease;
+  cursor: pointer;
 
   &:hover {
     text-decoration-color: $link-underline-hover;
   }
-}
-
-// Email button (clickable span)
-.email-btn {
-  cursor: pointer;
 }
