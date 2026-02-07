@@ -134,6 +134,16 @@ $link-underline-hover: rgba(0, 0, 0, 0.8);
   }
 }
 
+// Twitter embed container
+.twitter-tweet-container {
+  width: 100%;
+  
+  twitter-widget {
+    transform: scale(0.85);
+    transform-origin: top center;
+  }
+}
+
 // Responsive grid for effects/filters pages
 .responsive-grid {
   display: grid;

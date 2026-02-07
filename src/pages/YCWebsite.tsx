@@ -1,14 +1,45 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useRef } from 'react';
 import './Homepage.scss';
 import BackButton from '../components/BackButton';
 
+declare global {
+  interface Window {
+    twttr: any;
+  }
+}
+
 const YCWebsite: React.FC = () => {
+  const tweetRef = useRef<HTMLDivElement>(null);
+  const tweetCreated = useRef(false);
+
   useEffect(() => {
     // Load Geist Mono font
     const link = document.createElement('link');
     link.href = 'https://fonts.googleapis.com/css2?family=Geist+Mono:wght@300;400&display=swap';
     link.rel = 'stylesheet';
     document.head.appendChild(link);
+
+    // Load Twitter widgets script and create tweet
+    const createTweet = () => {
+      if (window.twttr && tweetRef.current && !tweetCreated.current) {
+        tweetCreated.current = true;
+        window.twttr.widgets.createTweet(
+          '2014744955206689003',
+          tweetRef.current,
+          { theme: 'light', align: 'center' }
+        );
+      }
+    };
+
+    if (window.twttr) {
+      createTweet();
+    } else {
+      const script = document.createElement('script');
+      script.src = 'https://platform.twitter.com/widgets.js';
+      script.async = true;
+      script.onload = createTweet;
+      document.body.appendChild(script);
+    }
     
     return () => {
       document.head.removeChild(link);
@@ -48,6 +79,13 @@ const YCWebsite: React.FC = () => {
           width: '100%',
           marginBottom: '48px',
         }}
+      />
+
+      {/* Tweet Embed */}
+      <div 
+        ref={tweetRef}
+        className="twitter-tweet-container"
+        style={{ marginBottom: '48px', display: 'flex', justifyContent: 'center' }}
       />
 
       {/* Content */}
