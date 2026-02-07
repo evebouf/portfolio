@@ -65,13 +65,7 @@ const Photography: React.FC = () => {
       <p style={{ marginBottom: '32px', textAlign: 'center' }}>Photography</p>
 
       {/* Image Grid - Masonry */}
-      <section
-        style={{
-          width: '100%',
-          columnCount: 4,
-          columnGap: '12px',
-        }}
-      >
+      <section className="photo-gallery" style={{ width: '100%' }}>
         {photos.map((photo, index) => (
           <div
             key={index}
