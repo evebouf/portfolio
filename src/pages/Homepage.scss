@@ -1,0 +1,113 @@
+// Variables
+$bg-color: #F2F0EE;
+$text-color: rgb(23, 23, 23);
+$border-color: rgba(23, 23, 23, 0.15);
+$link-underline: rgba(0, 0, 0, 0.3);
+$link-underline-hover: rgba(0, 0, 0, 0.8);
+
+// Base container
+.homepage {
+  min-height: 100vh;
+  font-family: 'Geist Mono', monospace;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 20px;
+  padding: 180px 24px 80px;
+  max-width: 520px;
+  margin: 0 auto;
+}
+
+// Name
+.name {
+  margin-bottom: 24px;
+}
+
+// Bio
+.bio {
+  margin-bottom: 32px;
+  opacity: 0.7;
+}
+
+// Section
+.section {
+  margin-top: 48px;
+}
+
+// Section header
+.section-header {
+  margin-bottom: 20px;
+  opacity: 0.5;
+  padding-bottom: 4px;
+  border-bottom: 1px solid $border-color;
+}
+
+// Section header without opacity (for Contact)
+.section-header--full {
+  margin-bottom: 20px;
+  padding-bottom: 4px;
+  border-bottom: 1px solid $border-color;
+}
+
+// Project item
+.project-item {
+  margin-bottom: 16px;
+
+  &:hover .project-title {
+    text-decoration: underline;
+  }
+}
+
+// Project link (for clickable items)
+.project-link {
+  text-decoration: none;
+  color: inherit;
+  display: block;
+}
+
+// Project title
+.project-title {
+  margin-bottom: 2px;
+  opacity: 0.7;
+}
+
+// Project description
+.project-description {
+  opacity: 0.5;
+  margin: 0;
+}
+
+// Coming soon text
+.coming-soon {
+  opacity: 0.5;
+  font-style: italic;
+}
+
+// Contact text
+.contact-text {
+  opacity: 0.7;
+  margin-bottom: 16px;
+}
+
+// Contact links container
+.contact-links {
+  display: flex;
+  gap: 16px;
+}
+
+// Text link
+.text-link {
+  color: inherit;
+  text-decoration: underline;
+  text-decoration-color: $link-underline;
+  text-underline-offset: 2px;
+  transition: text-decoration-color 0.2s ease;
+
+  &:hover {
+    text-decoration-color: $link-underline-hover;
+  }
+}
+
+// Email button (clickable span)
+.email-btn {
+  cursor: pointer;
+}
