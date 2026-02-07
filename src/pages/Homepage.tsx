@@ -102,10 +102,7 @@ const Homepage: React.FC = () => {
       {/* Bookmarks Section */}
       <div className="mt-section">
         <p className="section-header">05 Bookmarks</p>
-        <div className="project-item">
-          <p className="project-title text-secondary">Sites and pages that inspire me</p>
-          <p className="text-muted text-italic">coming soon</p>
-        </div>
+        <p className="text-muted text-italic">coming soon</p>
       </div>
 
       {/* Contact Section */}

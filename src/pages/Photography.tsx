@@ -1,4 +1,6 @@
 import React, { useEffect } from 'react';
+import './Homepage.scss';
+import BackButton from '../components/BackButton';
 
 // Import all photos
 import photo1 from '../photos/01E116EF-F7FE-4811-B7AA-C10B07D18769_1_105_c.jpeg';
@@ -32,12 +34,13 @@ const photos = [
 
 const Photography: React.FC = () => {
   useEffect(() => {
-    document.body.style.backgroundColor = '#FAF9F6';
-    document.body.style.color = '#0000FE';
+    document.body.style.backgroundColor = '#F2F0EE';
+    document.body.style.color = 'rgb(23, 23, 23)';
+    document.body.style.margin = '0';
     
-    // Load Instrument Serif font
+    // Load Geist Mono font
     const link = document.createElement('link');
-    link.href = 'https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&display=swap';
+    link.href = 'https://fonts.googleapis.com/css2?family=Geist+Mono:wght@300;400&display=swap';
     link.rel = 'stylesheet';
     document.head.appendChild(link);
     
@@ -52,35 +55,25 @@ const Photography: React.FC = () => {
     <div
       style={{
         minHeight: '100vh',
-        fontFamily: "'Departure Mono', monospace",
-        fontSize: '12px',
-        lineHeight: '1.5',
+        fontFamily: "'Geist Mono', monospace",
+        fontSize: '14px',
+        fontWeight: 400,
+        lineHeight: '20px',
+        padding: '80px 40px',
       }}
     >
+      {/* Back Button */}
+      <div style={{ marginBottom: '24px' }}>
+        <BackButton />
+      </div>
+
       {/* Title */}
-      <section
-        style={{
-          padding: '40px 40px 60px',
-          textAlign: 'center',
-        }}
-      >
-        <h1
-          style={{
-            fontSize: '48px',
-            fontWeight: 'normal',
-            letterSpacing: '-0.02em',
-            fontFamily: "'Instrument Serif', serif",
-          }}
-        >
-          Photography
-        </h1>
-      </section>
+      <p style={{ marginBottom: '32px', textAlign: 'center' }}>Photography</p>
 
       {/* Image Grid - Masonry */}
       <section
         style={{
           width: '100%',
-          padding: '0 40px 80px',
           columnCount: 4,
           columnGap: '12px',
         }}
