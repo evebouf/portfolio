@@ -4,7 +4,7 @@ import { HalftoneCmyk } from '@paper-design/shaders-react';
 
 const Homepage: React.FC = () => {
   const [emailCopied, setEmailCopied] = useState(false);
-  const [dotSize, setDotSize] = useState(0.88);
+  const [dotSize, setDotSize] = useState(0.28);
 
   const handleCopyEmail = () => {
     navigator.clipboard.writeText('e.bouffard252@gmail.com');
@@ -70,33 +70,47 @@ const Homepage: React.FC = () => {
 
       {/* Hero Image with Halftone Effect */}
       <div style={{ marginBottom: '48px', width: '100%' }}>
-        <HalftoneCmyk
-          width="100%"
-          height={300}
-          image="/pictures/the-old-fort-at-antibes (1).jpg"
-          colorBack="#eeefd7"
-          colorC="#00b3ff"
-          colorM="#fc4f4f"
-          colorY="#ffd900"
-          colorK="#231f20"
-          size={dotSize}
-          gridNoise={0.5}
-          type="ink"
-          softness={0}
-          contrast={1.15}
-          floodC={0.15}
-          floodM={0}
-          floodY={0}
-          floodK={0}
-          gainC={1}
-          gainM={0.44}
-          gainY={0.72}
-          gainK={0}
-          grainMixer={0.05}
-          grainOverlay={0.25}
-          grainSize={0.52}
-          fit="cover"
-        />
+        <div style={{ position: 'relative' }}>
+          <HalftoneCmyk
+            width="100%"
+            height={300}
+            image="/pictures/the-old-fort-at-antibes (1).jpg"
+            colorBack="#eeefd7"
+            colorC="#00b3ff"
+            colorM="#fc4f4f"
+            colorY="#ffd900"
+            colorK="#231f20"
+            size={dotSize}
+            gridNoise={0.5}
+            type="ink"
+            softness={0}
+            contrast={1.15}
+            floodC={0.15}
+            floodM={0}
+            floodY={0}
+            floodK={0}
+            gainC={1}
+            gainM={0.44}
+            gainY={0.72}
+            gainK={0}
+            grainMixer={0.05}
+            grainOverlay={0.25}
+            grainSize={0.52}
+            fit="cover"
+          />
+          <p 
+            style={{ 
+              position: 'absolute', 
+              bottom: '8px', 
+              right: '8px', 
+              fontSize: '10px', 
+              margin: 0,
+              color: 'rgba(255, 255, 255, 0.8)',
+            }}
+          >
+            The Old Fort at Antibes, 1888 — Claude Monet
+          </p>
+        </div>
         <div style={{ marginTop: '12px', display: 'flex', alignItems: 'center', gap: '12px' }}>
           <span className="text-muted" style={{ fontSize: '12px', whiteSpace: 'nowrap', flexShrink: 0 }}>dot size</span>
           <input
