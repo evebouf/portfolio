@@ -133,7 +133,7 @@ const Homepage: React.FC = () => {
           <a key={index} href={project.link} className="project-item project-link">
             <p className="project-title text-secondary" style={{ display: 'flex', justifyContent: 'space-between' }}>
               <span>{project.title}</span>
-              {project.comingSoon && <span className="text-muted" style={{ fontWeight: 300 }}>[&thinsp;coming soon&thinsp;]</span>}
+              {project.comingSoon && <span style={{ fontWeight: 300, cursor: 'default', color: 'rgba(23, 23, 23, 0.5)' }}>[&thinsp;coming soon&thinsp;]</span>}
             </p>
             <p className="text-muted no-margin">{project.description}</p>
           </a>
@@ -141,7 +141,7 @@ const Homepage: React.FC = () => {
           <div key={index} className="project-item">
             <p className="project-title text-secondary" style={{ display: 'flex', justifyContent: 'space-between' }}>
               <span>{project.title}</span>
-              {project.comingSoon && <span className="text-muted" style={{ fontWeight: 300 }}>[&thinsp;coming soon&thinsp;]</span>}
+              {project.comingSoon && <span style={{ fontWeight: 300, cursor: 'default', color: 'rgba(23, 23, 23, 0.5)' }}>[&thinsp;coming soon&thinsp;]</span>}
             </p>
             <p className="text-muted no-margin">{project.description}</p>
           </div>
@@ -152,15 +152,15 @@ const Homepage: React.FC = () => {
       <div className="mt-section">
         <p className="section-header">02 Explorations</p>
         <a href="/explorations/paper-effects" className="project-item project-link">
-          <p className="project-title text-secondary">Paper Effects</p>
+          <p className="project-title text-secondary"><span>Paper Effects</span></p>
           <p className="text-muted no-margin">Interactive effect experiments.</p>
         </a>
         <a href="/explorations/paper-filters" className="project-item project-link">
-          <p className="project-title text-secondary">Paper Filters</p>
+          <p className="project-title text-secondary"><span>Paper Filters</span></p>
           <p className="text-muted no-margin">Interactive filter experiments.</p>
         </a>
         <a href="/photography" className="project-item project-link">
-          <p className="project-title text-secondary">Photography</p>
+          <p className="project-title text-secondary"><span>Photography</span></p>
           <p className="text-muted no-margin">A collection of photographs.</p>
         </a>
       </div>
@@ -168,13 +168,13 @@ const Homepage: React.FC = () => {
       {/* Writings Section */}
       <div className="mt-section">
         <p className="section-header">03 Writings</p>
-        <p className="text-muted text-italic">coming soon</p>
+        <p style={{ fontWeight: 300, color: 'rgba(23, 23, 23, 0.5)' }}>[&thinsp;coming soon&thinsp;]</p>
       </div>
 
       {/* Bookmarks Section */}
       <div className="mt-section">
         <p className="section-header">04 Bookmarks</p>
-        <p className="text-muted text-italic">coming soon</p>
+        <p style={{ fontWeight: 300, color: 'rgba(23, 23, 23, 0.5)' }}>[&thinsp;coming soon&thinsp;]</p>
       </div>
 
       {/* Contact Section */}

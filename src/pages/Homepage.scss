@@ -50,8 +50,9 @@ $link-underline-hover: rgba(0, 0, 0, 0.8);
 .project-item {
   margin-bottom: 16px;
 
-  &:hover .project-title {
+  &:hover .project-title > span:first-child {
     text-decoration: underline;
+    text-underline-offset: 4px;
   }
 }
 
@@ -60,6 +61,7 @@ $link-underline-hover: rgba(0, 0, 0, 0.8);
   text-decoration: none;
   color: inherit;
   display: block;
+  cursor: pointer;
 }
 
 // Project title
