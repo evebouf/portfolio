@@ -10,6 +10,7 @@ import Article from './pages/Article';
 import PaperEffects from './pages/PaperEffects';
 import PaperFilters from './pages/PaperFilters';
 import YCWebsite from './pages/YCWebsite';
+import Bookmarks from './pages/Bookmarks';
 
 const App: React.FC = () => {
   return (
@@ -24,6 +25,7 @@ const App: React.FC = () => {
             <Route path="/explorations/paper-effects" element={<PaperEffects />} />
             <Route path="/explorations/paper-filters" element={<PaperFilters />} />
             <Route path="/projects/yc-website" element={<YCWebsite />} />
+            <Route path="/bookmarks" element={<Bookmarks />} />
             <Route path="/article/:slug" element={<Article />} />
             <Route path="*" element={<MonoBlueprintPage />} />
           </Routes>

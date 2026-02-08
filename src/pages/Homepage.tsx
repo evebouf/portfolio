@@ -209,7 +209,10 @@ const Homepage: React.FC = () => {
       {/* Bookmarks Section */}
       <div className="mt-section">
         <p className="section-header">04 Bookmarks</p>
-        <p style={{ fontWeight: 300, color: 'rgba(23, 23, 23, 0.5)' }}>coming soon</p>
+        <a href="/bookmarks" className="project-item project-link">
+          <p className="project-title text-secondary"><span>Collection</span></p>
+          <p className="text-muted no-margin">Sites and pages that inspire me.</p>
+        </a>
       </div>
 
       {/* Contact Section */}
