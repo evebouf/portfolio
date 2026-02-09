@@ -72,7 +72,7 @@ const PaperEffects: React.FC = () => {
               border: selectedPalette === index ? '1px solid rgb(23, 23, 23)' : '1px solid rgba(23, 23, 23, 0.2)',
               borderRadius: '4px',
               background: selectedPalette === index ? 'rgb(23, 23, 23)' : 'transparent',
-              color: selectedPalette === index ? '#F2F0EE' : 'rgb(23, 23, 23)',
+              color: selectedPalette === index ? '#F5F3E8' : 'rgb(23, 23, 23)',
               cursor: 'pointer',
               transition: 'all 0.15s ease',
               display: 'flex',

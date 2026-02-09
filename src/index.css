@@ -2,7 +2,7 @@
 
 /* Global background color - prevents white flash on overscroll */
 html, body {
-  background-color: #F2F0EE;
+  background-color: #F5F3E8;
   color: rgb(23, 23, 23);
   margin: 0;
 }
