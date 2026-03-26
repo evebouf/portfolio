@@ -1,5 +1,6 @@
 import * as React from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import { Analytics } from '@vercel/analytics/react';
 import './App.css';
 import './styles/fonts.css';
 import Home from './pages/Home';
@@ -32,6 +33,7 @@ const App: React.FC = () => {
             <Route path="*" element={<MonoBlueprintPage />} />
           </Routes>
         </main>
+        <Analytics />
       </div>
     </Router>
   );
