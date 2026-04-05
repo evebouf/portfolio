@@ -75,6 +75,7 @@ const Homepage: React.FC = () => {
     { title: 'YC Application Portal', desc: 'How 100,000+ startups apply every year.', link: null as string | null, soon: true },
     { title: 'YC Application Review', desc: 'Internal tool for reviewing applications.', link: null as string | null, soon: true },
     { title: 'Startup School 2026', desc: "Creative for YC's 6,000-person event.", link: null as string | null, soon: true },
+    { title: 'State of the Art', desc: 'Collaborative editorial project.', link: null as string | null, soon: true },
   ];
 
   const explorations = [
