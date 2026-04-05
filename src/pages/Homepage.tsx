@@ -1,11 +1,47 @@
 import React, { useEffect, useState } from 'react';
 import './Homepage.scss';
-import { HalftoneCmyk } from '@paper-design/shaders-react';
+
+type Mode = 'human' | 'machine';
+
+const MARKDOWN_SOURCE = `# Eve Bouffard
+
+Designer turned design engineer at [Y Combinator](https://yc.com),
+where I most recently redesigned and built the new YC homepage.
+
+---
+
+## 01 Projects
+
+- **[YC Website](/)** — Redesigned and built the new homepage.
+- **[YC Application Portal](/)** — How 100,000+ startups apply every year.
+- **[YC Application Review](/)** — Internal tool for reviewing applications.
+- **[Startup School 2026](/)** — Creative for YC's 6,000-person event.
+
+## 02 Explorations
+
+- **[Paper Effects](/explorations/paper-effects)** — Interactive effect experiments.
+- **[Paper Filters](/explorations/paper-filters)** — Interactive filter experiments.
+- **[Photography](/photography)** — A collection of photographs.
+
+## 03 Writings
+
+*coming soon*
+
+## 04 Bookmarks
+
+- **[Collection](/bookmarks)** — Sites and pages that inspire me.
+
+---
+
+## Contact
+
+Please reach out! I'd love to connect :)
+
+[Email](mailto:e.bouffard252@gmail.com) · [X](https://x.com/eve_bouff) · [LinkedIn](https://linkedin.com/in/eve-bouffard)`;
 
 const Homepage: React.FC = () => {
+  const [mode, setMode] = useState<Mode>('human');
   const [emailCopied, setEmailCopied] = useState(false);
-  const [dotSize, setDotSize] = useState(0.28);
-  const [ycHover, setYcHover] = useState(false);
 
   const handleCopyEmail = () => {
     navigator.clipboard.writeText('e.bouffard252@gmail.com');
@@ -14,220 +50,182 @@ const Homepage: React.FC = () => {
   };
 
   useEffect(() => {
-    // Load Geist Mono font
     const link = document.createElement('link');
-    link.href = 'https://fonts.googleapis.com/css2?family=Geist+Mono:wght@300;400&display=swap';
+    link.href = 'https://fonts.googleapis.com/css2?family=Geist+Mono:wght@300;400;500;700&display=swap';
     link.rel = 'stylesheet';
     document.head.appendChild(link);
-    
     return () => {
       document.head.removeChild(link);
     };
   }, []);
 
+  useEffect(() => {
+    document.body.classList.toggle('machine-mode', mode === 'machine');
+    document.documentElement.classList.toggle('machine-mode', mode === 'machine');
+    return () => {
+      document.body.classList.remove('machine-mode');
+      document.documentElement.classList.remove('machine-mode');
+    };
+  }, [mode]);
+
+  const lines = MARKDOWN_SOURCE.split('\n');
+
   const projects = [
-    {
-      title: 'YC Website',
-      description: 'Redesigned and built the new homepage.',
-      link: '/projects/yc-website',
-      comingSoon: true,
-    },
-    {
-      title: 'YC Application Portal',
-      description: 'How 100,000+ startups apply to YC every year.',
-      link: null,
-      comingSoon: true,
-    },
-    {
-      title: 'YC Application Review',
-      description: 'Internal tool for reviewing applications.',
-      link: null,
-      comingSoon: true,
-    },
-    {
-      title: 'Startup School 2026',
-      description: "Creative for YC's 6,000-person flagship event.",
-      link: null,
-      comingSoon: true,
-    },
+    { title: 'YC Website', desc: 'Redesigned and built the new homepage.', link: '/projects/yc-website', soon: true },
+    { title: 'YC Application Portal', desc: 'How 100,000+ startups apply every year.', link: null as string | null, soon: true },
+    { title: 'YC Application Review', desc: 'Internal tool for reviewing applications.', link: null as string | null, soon: true },
+    { title: 'Startup School 2026', desc: "Creative for YC's 6,000-person event.", link: null as string | null, soon: true },
+  ];
+
+  const explorations = [
+    { title: 'Paper Effects', desc: 'Interactive effect experiments.', link: '/explorations/paper-effects' },
+    { title: 'Paper Filters', desc: 'Interactive filter experiments.', link: '/explorations/paper-filters' },
+    { title: 'Agent UX Anatomy', desc: 'Visual guide to agent interfaces.', link: '/research/agent-builders' },
+    { title: 'Photography', desc: 'A collection of photographs.', link: '/photography' },
   ];
 
   return (
-    <div className="homepage">
-      {/* Name */}
-      <p className="mb-lg">Eve Bouffard</p>
-
-      {/* Bio */}
-      <p className="text-secondary mb-xl">
-        Designer turned design engineer at{' '}
-        <span style={{ position: 'relative', display: 'inline' }}>
-          <a 
-            href="https://www.ycombinator.com/" 
-            target="_blank" 
-            rel="noopener noreferrer" 
-            className="text-link"
-            onMouseEnter={() => setYcHover(true)}
-            onMouseLeave={() => setYcHover(false)}
-          >
-            Y Combinator
-          </a>
-          {ycHover && (
-            <svg 
-              width="16" 
-              height="16" 
-              viewBox="0 0 48 48" 
-              fill="none" 
-              xmlns="http://www.w3.org/2000/svg"
-              style={{ 
-                position: 'absolute', 
-                top: '-20px', 
-                left: '50%', 
-                transform: 'translateX(-50%)',
-                pointerEvents: 'none',
-              }}
-            >
-              <path d="M47.9985 47.9994H0V8.61853e-07H47.9985V47.9994Z" fill="#FF6600"/>
-              <path d="M13.9012 11.7843H17.6595L22.4961 21.5325C23.203 22.9836 23.7984 24.3976 23.7984 24.3976C23.7984 24.3976 24.4313 23.021 25.175 21.5325L30.0868 11.7843H33.5843L25.2865 27.3746V37.309H22.1244V27.1884L13.9012 11.7843Z" fill="white"/>
-            </svg>
-          )}
-        </span>
-        , where I most recently redesigned and built the new YC homepage.
-        {/* Before YC, I was in school, but spent most of my time working on a virtual reality game with ridiculously talented friends —{' '}
-        <a href="https://www.linkedin.com/in/max-brodeur-urbas" target="_blank" rel="noopener noreferrer" className="text-link">
-          Max
-        </a>
-        {' '}and{' '}
-        <a href="https://www.linkedin.com/in/imad-dodin/" target="_blank" rel="noopener noreferrer" className="text-link">
-          Imad
-        </a>
-        . */}
-      </p>
-
-      {/* Hero Image with Halftone Effect */}
-      <div style={{ marginBottom: '48px', width: '100%' }}>
-        <div style={{ position: 'relative' }}>
-          <HalftoneCmyk
-            width="100%"
-            height={300}
-            image="/pictures/the-old-fort-at-antibes (1).jpg"
-            colorBack="#eeefd7"
-            colorC="#00b3ff"
-            colorM="#fc4f4f"
-            colorY="#ffd900"
-            colorK="#231f20"
-            size={dotSize}
-            gridNoise={0.5}
-            type="ink"
-            softness={0}
-            contrast={1.15}
-            floodC={0.15}
-            floodM={0}
-            floodY={0}
-            floodK={0}
-            gainC={1}
-            gainM={0.44}
-            gainY={0.72}
-            gainK={0}
-            grainMixer={0.05}
-            grainOverlay={0.25}
-            grainSize={0.52}
-            fit="cover"
-          />
-          <p 
-            style={{ 
-              position: 'absolute', 
-              bottom: '8px', 
-              right: '8px', 
-              fontSize: '10px', 
-              margin: 0,
-              color: 'rgba(255, 255, 255, 0.8)',
-            }}
-          >
-            The Old Fort at Antibes, 1888 — Claude Monet
-          </p>
-        </div>
-        <div style={{ marginTop: '12px', display: 'flex', alignItems: 'center', gap: '12px' }}>
-          <span className="text-muted" style={{ fontSize: '12px', whiteSpace: 'nowrap', flexShrink: 0 }}>dot size</span>
-          <input
-            type="range"
-            min="0.1"
-            max="1"
-            step="0.01"
-            value={dotSize}
-            onChange={(e) => setDotSize(parseFloat(e.target.value))}
-            className="shader-slider"
-            style={{ flex: 1 }}
-          />
-        </div>
-      </div>
-
-      {/* Projects Section */}
-      <p className="section-header">01 Projects</p>
-      {projects.map((project, index) => (
-        project.link ? (
-          <a key={index} href={project.link} className="project-item project-link">
-            <p className="project-title text-secondary" style={{ display: 'flex', justifyContent: 'space-between' }}>
-              <span>{project.title}</span>
-              {project.comingSoon && <span style={{ fontWeight: 300, cursor: 'default', color: 'rgba(23, 23, 23, 0.5)' }}>coming soon</span>}
-            </p>
-            <p className="text-muted no-margin">{project.description}</p>
-          </a>
-        ) : (
-          <div key={index} className="project-item">
-            <p className="project-title text-secondary" style={{ display: 'flex', justifyContent: 'space-between' }}>
-              <span>{project.title}</span>
-              {project.comingSoon && <span style={{ fontWeight: 300, cursor: 'default', color: 'rgba(23, 23, 23, 0.5)' }}>coming soon</span>}
-            </p>
-            <p className="text-muted no-margin">{project.description}</p>
+    <div className={`homepage-wrapper mode-${mode}`}>
+      {/* ── HUMAN VIEW ── */}
+      {mode === 'human' && (
+        <div className="grid-page">
+          {/* Grid column indicators */}
+          <div className="grid-overlay" aria-hidden="true">
+            {[1, 2, 3, 4].map(n => (
+              <div key={n} className="grid-col">
+                <span className="grid-col-num">{n}</span>
+              </div>
+            ))}
           </div>
-        )
-      ))}
 
-      {/* Explorations Section */}
-      <div className="mt-section">
-        <p className="section-header">02 Explorations</p>
-        <a href="/explorations/paper-effects" className="project-item project-link">
-          <p className="project-title text-secondary"><span>Paper Effects</span></p>
-          <p className="text-muted no-margin">Interactive effect experiments.</p>
-        </a>
-        <a href="/explorations/paper-filters" className="project-item project-link">
-          <p className="project-title text-secondary"><span>Paper Filters</span></p>
-          <p className="text-muted no-margin">Interactive filter experiments.</p>
-        </a>
-        <a href="/photography" className="project-item project-link">
-          <p className="project-title text-secondary"><span>Photography</span></p>
-          <p className="text-muted no-margin">A collection of photographs.</p>
-        </a>
-      </div>
+          {/* Content on the grid */}
+          <div className="grid-content">
+            <header className="grid-header">
+              <h1 className="grid-name">Eve Bouffard</h1>
+              <p className="grid-bio">
+                Designer turned design engineer at{' '}
+                <a
+                  href="https://www.ycombinator.com/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="grid-link"
+                >
+                  Y Combinator
+                </a>
+                , where I most recently redesigned and built the new YC homepage.
+              </p>
+            </header>
 
-      {/* Writings Section */}
-      <div className="mt-section">
-        <p className="section-header">03 Writings</p>
-        <p style={{ fontWeight: 300, color: 'rgba(23, 23, 23, 0.5)' }}>coming soon</p>
-      </div>
+            {/* 01 Projects */}
+            <section className="grid-section">
+              <div className="grid-label">01 Projects</div>
+              <div className="grid-items">
+                {projects.map((p, i) => {
+                  const inner = (
+                    <>
+                      <span className="grid-row-title">{p.title}</span>
+                      <span className="grid-row-desc">{p.desc}</span>
+                      {p.soon && <span className="grid-row-badge">soon</span>}
+                    </>
+                  );
+                  return p.link ? (
+                    <a key={i} href={p.link} className="grid-row grid-row-link">
+                      {inner}
+                    </a>
+                  ) : (
+                    <div key={i} className="grid-row">
+                      {inner}
+                    </div>
+                  );
+                })}
+              </div>
+            </section>
 
-      {/* Bookmarks Section */}
-      <div className="mt-section">
-        <p className="section-header">04 Bookmarks</p>
-        <a href="/bookmarks" className="project-item project-link">
-          <p className="project-title text-secondary"><span>Collection</span></p>
-          <p className="text-muted no-margin">Sites and pages that inspire me.</p>
-        </a>
-      </div>
+            {/* 02 Explorations */}
+            <section className="grid-section">
+              <div className="grid-label">02 Explorations</div>
+              <div className="grid-items">
+                {explorations.map((e, i) => (
+                  <a key={i} href={e.link} className="grid-row grid-row-link">
+                    <span className="grid-row-title">{e.title}</span>
+                    <span className="grid-row-desc">{e.desc}</span>
+                  </a>
+                ))}
+              </div>
+            </section>
 
-      {/* Contact Section */}
-      <div className="mt-section">
-        <p className="section-header">Contact</p>
-        <p className="text-secondary mb-md">
-          Please reach out! I'd love to connect :)
-        </p>
-        <div className="contact-links text-secondary">
-          <span onClick={handleCopyEmail} className="text-link">
-            {emailCopied ? 'Copied!' : 'Email'}
-          </span>
-          <a href="https://x.com/eve_bouff" target="_blank" rel="noopener noreferrer" className="text-link">X</a>
-          <a href="https://www.linkedin.com/in/eve-bouffard/" target="_blank" rel="noopener noreferrer" className="text-link">LinkedIn</a>
+            {/* 03 Writings */}
+            <section className="grid-section">
+              <div className="grid-label">03 Writings</div>
+              <div className="grid-items">
+                <span className="grid-coming-soon">coming soon</span>
+              </div>
+            </section>
+
+            {/* 04 Bookmarks */}
+            <section className="grid-section">
+              <div className="grid-label">04 Bookmarks</div>
+              <div className="grid-items">
+                <a href="/bookmarks" className="grid-row grid-row-link">
+                  <span className="grid-row-title">Collection</span>
+                  <span className="grid-row-desc">Sites and pages that inspire me.</span>
+                </a>
+              </div>
+            </section>
+
+            {/* Contact */}
+            <div className="grid-section grid-section-last">
+              <div className="grid-label">Contact</div>
+              <div className="grid-items">
+                <p className="grid-contact-text">
+                  Please reach out! I'd love to connect :)
+                </p>
+                <div className="grid-contact-links">
+                  <span className="grid-link" onClick={handleCopyEmail}>
+                    {emailCopied ? 'Copied!' : 'Email'}
+                  </span>
+                  <a href="https://x.com/eve_bouff" target="_blank" rel="noopener noreferrer" className="grid-link">X</a>
+                  <a href="https://www.linkedin.com/in/eve-bouffard/" target="_blank" rel="noopener noreferrer" className="grid-link">LinkedIn</a>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
+      )}
+
+      {/* ── MACHINE VIEW ── */}
+      {mode === 'machine' && (
+        <div className="machine-view">
+          <div className="machine-topbar">
+            <span className="machine-filename">eve.md</span>
+            <span className="machine-encoding">UTF-8 / Markdown</span>
+          </div>
+          <div className="machine-editor">
+            <div className="machine-line-numbers">
+              {lines.map((_, i) => (
+                <span key={i}>{i + 1}</span>
+              ))}
+            </div>
+            <div className="machine-gutter" />
+            <pre className="machine-source">{MARKDOWN_SOURCE}</pre>
+          </div>
+        </div>
+      )}
+
+      {/* ── TOGGLE ── */}
+      <div className={`mode-toggle toggle-${mode}`}>
+        <button
+          className={`toggle-option ${mode === 'human' ? 'active' : ''}`}
+          onClick={() => setMode('human')}
+        >
+          HUMAN
+        </button>
+        <button
+          className={`toggle-option ${mode === 'machine' ? 'active' : ''}`}
+          onClick={() => setMode('machine')}
+        >
+          MACHINE
+        </button>
       </div>
     </div>
   );

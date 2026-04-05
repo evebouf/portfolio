@@ -1,177 +1,385 @@
-// Variables
-$bg-color: #F5F3E8;
-$text-color: rgb(23, 23, 23);
-$border-color: rgba(23, 23, 23, 0.15);
-$link-underline: rgba(0, 0, 0, 0.3);
-$link-underline-hover: rgba(0, 0, 0, 0.8);
+// ─── Grid System Tokens ───
+$bg: #FAFAF8;
+$text: #1a1a18;
+$text-secondary: #6b6963;
+$text-muted: #9b9a97;
+$text-faint: #c8c5c0;
+$border: #e0ddd8;
+$grid-line: rgba(0, 0, 0, 0.06);
+$grid-line-faint: rgba(0, 0, 0, 0.025);
 
-// Base container
-.homepage {
+$machine-bg: #111111;
+$machine-text: #908d86;
+$machine-line-num: #333;
+$machine-gutter: #222;
+$machine-meta: #555;
+$machine-meta-dim: #444;
+
+$page-width: 800px;
+$col-gap: 20px;
+$baseline: 28px;
+
+// ─── Wrapper ───
+.homepage-wrapper {
   min-height: 100vh;
-  font-family: 'Geist Mono', monospace;
-  font-size: 14px;
-  font-weight: 400;
-  line-height: 20px;
-  padding: 180px 24px 80px;
-  max-width: 520px;
-  margin: 0 auto;
-}
-
-// Text opacity utilities
-.text-secondary {
-  opacity: 0.8;
-  font-weight: 300;
-}
-
-.text-muted {
-  opacity: 0.6;
-  font-weight: 300;
-}
-
-.text-italic {
-  font-style: italic;
-}
-
-// Spacing utilities
-.mb-sm { margin-bottom: 2px; }
-.mb-md { margin-bottom: 16px; }
-.mb-lg { margin-bottom: 24px; }
-.mb-xl { margin-bottom: 32px; }
-.mt-section { margin-top: 48px; }
-
-// Section header
-.section-header {
-  margin-bottom: 20px;
-  padding-bottom: 4px;
-  border-bottom: 1px solid $border-color;
-}
-
-// Project item
-.project-item {
-  margin-bottom: 16px;
-}
-
-// Hover underline only for clickable project links
-.project-link:hover .project-title > span:first-child {
-  text-decoration: underline;
-  text-underline-offset: 4px;
-}
-
-// Project link (for clickable items)
-.project-link {
-  text-decoration: none;
-  color: inherit;
-  display: block;
-  cursor: pointer;
-}
-
-// Project title
-.project-title {
-  margin-bottom: 2px;
-}
-
-// No margin
-.no-margin {
-  margin: 0;
-}
-
-// Contact links container
-.contact-links {
-  display: flex;
-  gap: 16px;
-}
-
-// Shader slider
-.shader-slider {
-  -webkit-appearance: none;
-  appearance: none;
   width: 100%;
-  height: 1px;
-  background: rgba(23, 23, 23, 0.2);
-  outline: none;
-  cursor: pointer;
-  border: none;
-  box-shadow: none;
+  font-family: 'Geist Mono', monospace;
+  transition: background-color 0.5s ease;
+  padding-bottom: 100px;
 
-  &:focus {
-    outline: none;
-    box-shadow: none;
+  &.mode-human {
+    background-color: $bg;
+    color: $text;
+    display: flex;
+    justify-content: center;
   }
 
-  &::-webkit-slider-thumb {
-    -webkit-appearance: none;
-    appearance: none;
-    width: 12px;
-    height: 12px;
-    border-radius: 50%;
-    background: rgb(23, 23, 23);
-    cursor: pointer;
-    transition: transform 0.15s ease;
-    box-shadow: none !important;
-    border: none;
-
-    &:hover {
-      transform: scale(1.2);
-    }
-  }
-
-  &::-moz-range-thumb {
-    width: 12px;
-    height: 12px;
-    border-radius: 50%;
-    background: rgb(23, 23, 23);
-    cursor: pointer;
-    border: none;
-    box-shadow: none !important;
-    transition: transform 0.15s ease;
-
-    &:hover {
-      transform: scale(1.2);
-    }
+  &.mode-machine {
+    background-color: $machine-bg;
+    color: $machine-text;
   }
 }
 
-// Text link
-.text-link {
+// ─── GRID PAGE ───
+.grid-page {
+  width: $page-width;
+  min-height: 100vh;
+  position: relative;
+  padding-top: 48px;
+
+  // Subtle baseline grid
+  background-image: repeating-linear-gradient(
+    0deg,
+    transparent,
+    transparent #{$baseline - 1px},
+    $grid-line-faint #{$baseline - 1px},
+    $grid-line-faint #{$baseline}
+  );
+
+  @media (max-width: 860px) {
+    width: 100%;
+    padding: 32px 24px 0;
+  }
+}
+
+// ─── Grid Overlay (visible column lines) ───
+.grid-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  column-gap: $col-gap;
+  pointer-events: none;
+  z-index: 0;
+
+  @media (max-width: 860px) {
+    display: none;
+  }
+}
+
+.grid-col {
+  border-left: 1px solid $grid-line;
+  border-right: 1px solid $grid-line;
+  position: relative;
+}
+
+.grid-col-num {
+  position: absolute;
+  top: 16px;
+  left: 8px;
+  font-size: 10px;
+  color: $text-faint;
+  letter-spacing: 0.05em;
+  user-select: none;
+}
+
+// ─── Content ───
+.grid-content {
+  position: relative;
+  z-index: 1;
+  padding-top: 40px;
+  animation: fadeIn 0.3s ease;
+}
+
+// ─── Header ───
+.grid-header {
+  padding-bottom: #{$baseline};
+  border-bottom: 1px solid $border;
+  margin-bottom: 0;
+}
+
+.grid-name {
+  font-size: 24px;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  line-height: #{$baseline};
+  margin: 0 0 12px;
+  color: $text;
+}
+
+.grid-bio {
+  font-size: 13px;
+  font-weight: 400;
+  line-height: 1.65;
+  color: $text-secondary;
+  margin: 0;
+  max-width: 480px;
+}
+
+.grid-link {
   color: inherit;
   text-decoration: underline;
-  text-decoration-color: $link-underline;
-  text-underline-offset: 2px;
-  transition: text-decoration-color 0.2s ease;
+  text-decoration-color: rgba(0, 0, 0, 0.2);
+  text-underline-offset: 3px;
   cursor: pointer;
+  transition: text-decoration-color 0.2s ease;
 
   &:hover {
-    text-decoration-color: $link-underline-hover;
+    text-decoration-color: rgba(0, 0, 0, 0.6);
   }
 }
 
-// Twitter embed container
-.twitter-tweet-container {
-  width: 100%;
-  
-  twitter-widget {
-    transform: scale(0.85);
-    transform-origin: top center;
-  }
-}
-
-// Responsive grid for effects/filters pages
-.responsive-grid {
+// ─── Sections ───
+.grid-section {
   display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
-  gap: 24px;
+  grid-template-columns: repeat(4, 1fr);
+  column-gap: $col-gap;
+  padding: #{$baseline} 0;
+  border-bottom: 1px solid $border;
 
-  @media (max-width: 768px) {
+  @media (max-width: 860px) {
     grid-template-columns: 1fr;
+    gap: 16px 0;
   }
 }
 
-// Responsive photo gallery
-.photo-gallery {
-  column-count: 4;
-  column-gap: 12px;
+.grid-section-last {
+  border-bottom: none;
+}
+
+.grid-label {
+  grid-column: 1;
+  font-size: 11px;
+  font-weight: 500;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: $text-muted;
+  padding-top: 4px;
+}
+
+.grid-items {
+  grid-column: 2 / -1;
+  display: flex;
+  flex-direction: column;
+
+  @media (max-width: 860px) {
+    grid-column: 1;
+  }
+}
+
+// ─── Rows ───
+.grid-row {
+  display: flex;
+  align-items: baseline;
+  padding: 6px 0;
+  text-decoration: none;
+  color: inherit;
+  gap: 12px;
+}
+
+.grid-row-link {
+  cursor: pointer;
+
+  &:hover .grid-row-title {
+    text-decoration: underline;
+    text-underline-offset: 3px;
+  }
+}
+
+.grid-row-title {
+  font-size: 14px;
+  font-weight: 500;
+  color: $text;
+  width: 180px;
+  flex-shrink: 0;
+
+  @media (max-width: 860px) {
+    width: auto;
+  }
+}
+
+.grid-row-desc {
+  font-size: 12px;
+  color: $text-muted;
+  flex: 1;
+}
+
+.grid-row-badge {
+  font-size: 10px;
+  color: $text-faint;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  flex-shrink: 0;
+}
+
+.grid-coming-soon {
+  font-size: 12px;
+  font-style: italic;
+  color: $text-faint;
+  padding: 6px 0;
+}
+
+// ─── Contact ───
+.grid-contact-text {
+  font-size: 13px;
+  color: $text-secondary;
+  margin: 0 0 12px;
+}
+
+.grid-contact-links {
+  display: flex;
+  gap: 16px;
+  font-size: 13px;
+}
+
+// ─── MACHINE VIEW ───
+.machine-view {
+  animation: fadeIn 0.3s ease;
+}
+
+.machine-topbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 24px 64px;
 
   @media (max-width: 768px) {
-    column-count: 1;
+    padding: 16px 24px;
   }
+}
+
+.machine-filename {
+  font-size: 12px;
+  color: $machine-meta;
+  letter-spacing: 0.05em;
+}
+
+.machine-encoding {
+  font-size: 11px;
+  color: $machine-meta-dim;
+}
+
+.machine-editor {
+  display: flex;
+  padding: 8px 64px 40px;
+  gap: 0;
+
+  @media (max-width: 768px) {
+    padding: 8px 24px 40px;
+  }
+}
+
+.machine-line-numbers {
+  display: flex;
+  flex-direction: column;
+  width: 32px;
+  flex-shrink: 0;
+  font-size: 13px;
+  line-height: 26px;
+  color: $machine-line-num;
+  text-align: right;
+  user-select: none;
+}
+
+.machine-gutter {
+  width: 1px;
+  background-color: $machine-gutter;
+  flex-shrink: 0;
+  margin: 0 16px;
+
+  @media (max-width: 768px) {
+    margin: 0 12px;
+  }
+}
+
+.machine-source {
+  font-family: 'Geist Mono', monospace;
+  font-size: 14px;
+  line-height: 26px;
+  color: $machine-text;
+  margin: 0;
+  white-space: pre-wrap;
+  word-break: break-word;
+  flex: 1;
+  min-width: 0;
+}
+
+// ─── TOGGLE ───
+.mode-toggle {
+  position: fixed;
+  bottom: 32px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  align-items: center;
+  border-radius: 100px;
+  padding: 4px;
+  z-index: 100;
+  transition: background-color 0.5s ease, border-color 0.5s ease;
+
+  &.toggle-human {
+    background-color: #fff;
+    border: 1px solid $border;
+  }
+
+  &.toggle-machine {
+    background-color: #1a1a1a;
+    border: 1px solid #2a2a2a;
+  }
+}
+
+.toggle-option {
+  font-family: 'Geist Mono', monospace;
+  font-size: 11px;
+  letter-spacing: 0.1em;
+  padding: 8px 20px;
+  border: none;
+  border-radius: 100px;
+  cursor: pointer;
+  background: transparent;
+  transition: background-color 0.25s ease, color 0.25s ease;
+
+  .toggle-human & {
+    color: $text-muted;
+
+    &.active {
+      background-color: $text;
+      color: $bg;
+    }
+  }
+
+  .toggle-machine & {
+    color: $machine-meta;
+
+    &.active {
+      background-color: #e8e5e0;
+      color: #111;
+    }
+  }
+}
+
+// ─── Body override for machine mode ───
+:global(html.machine-mode),
+:global(body.machine-mode) {
+  background-color: $machine-bg !important;
+  transition: background-color 0.5s ease;
+}
+
+// ─── Animation ───
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
 }
