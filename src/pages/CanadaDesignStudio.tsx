@@ -180,15 +180,18 @@ const CanadaDesignStudio: React.FC = () => {
           </a>
         </div>
 
-        <h1 style={{
-          fontSize: 24,
-          fontWeight: 700,
-          letterSpacing: '-0.02em',
-          lineHeight: '28px',
-          margin: '0 0 28px',
-        }}>
-          National Design Studio for Canada
-        </h1>
+        <div style={{ display: 'flex', alignItems: 'center', gap: 12, margin: '0 0 28px' }}>
+          <img src="/maple-leaf.png" alt="" style={{ width: 28, height: 28, objectFit: 'contain' }} />
+          <h1 style={{
+            fontSize: 24,
+            fontWeight: 700,
+            letterSpacing: '-0.02em',
+            lineHeight: '28px',
+            margin: 0,
+          }}>
+            National Design Studio for Canada
+          </h1>
+        </div>
 
         <p style={{
           fontSize: 13,
