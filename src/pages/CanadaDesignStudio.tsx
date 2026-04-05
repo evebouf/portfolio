@@ -157,6 +157,12 @@ const CanadaDesignStudio: React.FC = () => {
         color: #1a1a18 !important;
         transform: translate(1px, -1px);
       }
+      .hero-leaf {
+        width: 200px;
+        height: 200px;
+        object-fit: contain;
+        filter: drop-shadow(4px 4px 0px rgba(0, 0, 0, 0.35));
+      }
     `}</style>
     <div style={{
       minHeight: '100vh',
@@ -180,18 +186,20 @@ const CanadaDesignStudio: React.FC = () => {
           </a>
         </div>
 
-        <div style={{ display: 'flex', alignItems: 'center', gap: 12, margin: '0 0 28px' }}>
-          <img src="/maple-leaf.png" alt="" style={{ width: 28, height: 28, objectFit: 'contain' }} />
-          <h1 style={{
-            fontSize: 24,
-            fontWeight: 700,
-            letterSpacing: '-0.02em',
-            lineHeight: '28px',
-            margin: 0,
-          }}>
-            National Design Studio for Canada
-          </h1>
+        <div style={{ display: 'flex', justifyContent: 'center', margin: '0 0 56px' }}>
+          <img src="/maple-leaf.png" alt="" className="hero-leaf" />
         </div>
+
+        <h1 style={{
+          fontSize: 24,
+          fontWeight: 700,
+          letterSpacing: '-0.02em',
+          lineHeight: '28px',
+          margin: '0 0 28px',
+          textAlign: 'center',
+        }}>
+          National Design Studio for Canada
+        </h1>
 
         <p style={{
           fontSize: 13,
