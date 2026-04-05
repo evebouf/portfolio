@@ -159,7 +159,14 @@ const Homepage: React.FC = () => {
             <section className="grid-section">
               <div className="grid-label">03 Writings</div>
               <div className="grid-items">
-                <span className="grid-coming-soon">coming soon</span>
+                {import.meta.env.DEV ? (
+                  <a href="/ideas" className="grid-row grid-row-link">
+                    <span className="grid-row-title">Ideas</span>
+                    <span className="grid-row-desc">Project ideas and explorations to pursue.</span>
+                  </a>
+                ) : (
+                  <span className="grid-coming-soon">coming soon</span>
+                )}
               </div>
             </section>
 

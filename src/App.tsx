@@ -12,6 +12,11 @@ import PaperFilters from './pages/PaperFilters';
 import YCWebsite from './pages/YCWebsite';
 import Bookmarks from './pages/Bookmarks';
 import Food from './pages/Food';
+import VictorianFlat from './pages/VictorianFlat';
+import AgentBuilders from './pages/AgentBuilders';
+import Login from './pages/Login';
+import Ideas from './pages/Ideas';
+import CanadaDesignStudio from './pages/CanadaDesignStudio';
 
 const App: React.FC = () => {
   return (
@@ -28,7 +33,12 @@ const App: React.FC = () => {
             <Route path="/projects/yc-website" element={<YCWebsite />} />
             <Route path="/bookmarks" element={<Bookmarks />} />
             <Route path="/projects/food" element={<Food />} />
+            <Route path="/projects/victorian-flat" element={<VictorianFlat />} />
+            <Route path="/research/agent-builders" element={<AgentBuilders />} />
+            <Route path="/login" element={<Login />} />
             <Route path="/article/:slug" element={<Article />} />
+            {import.meta.env.DEV && <Route path="/ideas" element={<Ideas />} />}
+            {import.meta.env.DEV && <Route path="/ideas/canada-design-studio" element={<CanadaDesignStudio />} />}
             <Route path="*" element={<MonoBlueprintPage />} />
           </Routes>
         </main>
