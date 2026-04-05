@@ -182,14 +182,16 @@ $baseline: 28px;
 }
 
 // ─── Rows ───
+// Title takes exactly one grid column width, gap matches grid gap,
+// so desc starts precisely at overlay column 3.
 .grid-row {
   display: flex;
   align-items: baseline;
+  gap: $col-gap;
   padding: 0;
   text-decoration: none;
   color: inherit;
-  gap: 12px;
-  line-height: $baseline; // each row = exactly one grid line
+  line-height: $baseline;
 }
 
 .grid-row-link {
@@ -202,11 +204,12 @@ $baseline: 28px;
 }
 
 .grid-row-title {
+  // Exactly one grid column wide: (container - 2 gaps) / 3
+  width: calc((100% - #{$col-gap} * 2) / 3);
+  flex-shrink: 0;
   font-size: 14px;
   font-weight: 500;
   color: $text;
-  width: 180px;
-  flex-shrink: 0;
   line-height: $baseline;
 
   @media (max-width: 860px) {
@@ -217,8 +220,8 @@ $baseline: 28px;
 .grid-row-desc {
   font-size: 12px;
   color: $text-muted;
-  flex: 1;
   line-height: $baseline;
+  white-space: nowrap;
 }
 
 .grid-row-badge {
@@ -226,8 +229,9 @@ $baseline: 28px;
   color: $text-faint;
   text-transform: uppercase;
   letter-spacing: 0.08em;
-  flex-shrink: 0;
   line-height: $baseline;
+  margin-left: auto;
+  flex-shrink: 0;
 }
 
 .grid-coming-soon {
