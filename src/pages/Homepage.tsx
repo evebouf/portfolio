@@ -51,7 +51,7 @@ const Homepage: React.FC = () => {
 
   useEffect(() => {
     const link = document.createElement('link');
-    link.href = 'https://fonts.googleapis.com/css2?family=Geist+Mono:wght@300;400;500;700&display=swap';
+    link.href = 'https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,400&display=swap';
     link.rel = 'stylesheet';
     document.head.appendChild(link);
     return () => {
@@ -218,12 +218,14 @@ const Homepage: React.FC = () => {
           className={`toggle-option ${mode === 'human' ? 'active' : ''}`}
           onClick={() => setMode('human')}
         >
+          <span className="toggle-radio" />
           HUMAN
         </button>
         <button
           className={`toggle-option ${mode === 'machine' ? 'active' : ''}`}
           onClick={() => setMode('machine')}
         >
+          <span className="toggle-radio" />
           MACHINE
         </button>
       </div>
